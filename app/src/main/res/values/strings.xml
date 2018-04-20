@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LotteryDemo</string>
+    <string name="title_home">主页</string>
+    <string name="title_news">最新资讯</string>
+    <string name="title_sport">体育赛事</string>
+    <string name="title_user">我的</string>
+    <string name="lable_login">\t\t登\t\t陆</string>
+</resources>
