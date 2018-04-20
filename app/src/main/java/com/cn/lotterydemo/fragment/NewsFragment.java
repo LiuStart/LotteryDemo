@@ -13,17 +13,17 @@ import com.cn.lotterydemo.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ZoushiFragment extends Fragment{
+public class NewsFragment extends Fragment{
 
 
-    public ZoushiFragment() {
+    public NewsFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.fragment_zoushi, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_news, container, false);
         // Inflate the layout for this fragment
         return inflate;
     }

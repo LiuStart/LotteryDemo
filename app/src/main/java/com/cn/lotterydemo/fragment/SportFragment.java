@@ -19,7 +19,7 @@ public class SportFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.sport_fragment, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_sport, container, false);
         return inflate;
     }
 }

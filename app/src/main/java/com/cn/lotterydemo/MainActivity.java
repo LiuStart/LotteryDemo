@@ -10,10 +10,10 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.cn.lotterydemo.adapter.MainAdapter;
-import com.cn.lotterydemo.fragment.HomePageFragment;
-import com.cn.lotterydemo.fragment.KaijiangFragment;
+import com.cn.lotterydemo.fragment.UserFragment;
+import com.cn.lotterydemo.fragment.HomeFragment;
 import com.cn.lotterydemo.fragment.SportFragment;
-import com.cn.lotterydemo.fragment.ZoushiFragment;
+import com.cn.lotterydemo.fragment.NewsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     private void initViewPager() {
         mList = new ArrayList<>();
-        mList.add(new KaijiangFragment());
-        mList.add(new ZoushiFragment());
+        mList.add(new HomeFragment());
+        mList.add(new NewsFragment());
         mList.add(new SportFragment());
-        mList.add(new HomePageFragment());
+        mList.add(new UserFragment());
         viewPager = findViewById(R.id.viewPager);
         viewPager.setOnPageChangeListener(this);
         MainAdapter mainAdapter = new MainAdapter(getSupportFragmentManager(), mList);
