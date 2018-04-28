@@ -170,4 +170,6 @@
     <color name="list_blue">#64b5f6</color>
     <color name="normal_btn_bg">#4CB849</color>
     <color name="selected_btn_bg">#0C6609</color>
+    <color name="user">#EEEBEB</color>
+
 </resources>

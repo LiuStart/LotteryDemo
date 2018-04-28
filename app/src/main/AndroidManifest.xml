@@ -93,6 +93,8 @@
                   android:label="@string/lable_mobike"
                   android:theme="@style/AppTheme"></activity>
         <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".UserInfoActivity"
+                  android:label="@string/user_info"></activity>
     </application>
 
 </manifest>

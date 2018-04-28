@@ -3,6 +3,7 @@ package com.cn.lotterydemo.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -16,8 +17,12 @@ import android.widget.TextView;
 
 import com.cn.lotterydemo.LoginActivity;
 import com.cn.lotterydemo.R;
+import com.cn.lotterydemo.UserInfoActivity;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -39,11 +44,13 @@ public class UserFragment extends Fragment{
     private ArrayList<String>list;
     private TextView userHead;
     private SharedPreferences USER;
+    private CircleImageView headImage;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View inflate = inflater.inflate(R.layout.fragment_user, container, false);
+        headImage=inflate.findViewById(R.id.userhead);
         /*list=new ArrayList<>();
         list.add("11");
         list.add("22");
@@ -67,13 +74,23 @@ public class UserFragment extends Fragment{
         loginview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), LoginActivity.class));
+                if(TextUtils.isEmpty(USER.getString("NAME",""))){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(), UserInfoActivity.class));
+                }
             }
         });
         USER=getContext().getSharedPreferences("USER", Context.MODE_PRIVATE);
         userHead=inflate.findViewById(R.id.userview);
         if(!TextUtils.isEmpty(USER.getString("NAME",""))){
             userHead.setText(USER.getString("NAME",""));
+        }
+        String nameHead=USER.getString("NAME","")+"HEAD";
+        if(TextUtils.isEmpty(USER.getString(nameHead,""))){
+            headImage.setBackgroundResource(R.drawable.userhead);
+        }else{
+            headImage.setImageBitmap(BitmapFactory.decodeFile(USER.getString(nameHead,"")));
         }
         return inflate;
     }
@@ -85,4 +102,5 @@ public class UserFragment extends Fragment{
         }
         super.onResume();
     }
+
 }
