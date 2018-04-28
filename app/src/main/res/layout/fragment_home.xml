@@ -8,5 +8,15 @@
         android:layout_width="wrap_content"
         android:text="主页"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:text="test"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/mobike"
+        android:layout_width="wrap_content"
+        android:text="mobike"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

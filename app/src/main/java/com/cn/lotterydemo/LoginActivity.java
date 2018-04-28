@@ -1,12 +1,15 @@
 package com.cn.lotterydemo;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,22 +23,78 @@ import com.tencent.tauth.UiError;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by Administrator on 2018/4/20.
  */
 
 public class LoginActivity extends AppCompatActivity{
     Tencent mTencent;
+    private SharedPreferences USER;
+    private EditText userName;
+    private EditText passWord;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+        USER =getSharedPreferences("USER",MODE_PRIVATE);
         mTencent = Tencent.createInstance("1106779649",getApplicationContext());
         Button login=findViewById(R.id.bt_login);
+        userName=findViewById(R.id.username);
+        passWord=findViewById(R.id.password);
+        Button regist=findViewById(R.id.bt_register);
+        regist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TextUtils.isEmpty(userName.getText().toString())||TextUtils.isEmpty(passWord.getText().toString())){
+                    Toast.makeText(LoginActivity.this,"不能为空！！",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String name=userName.getText().toString();
+                if(!isEmail(name)){
+                    Toast.makeText(LoginActivity.this,"邮箱格式不正确！！",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String pass=passWord.getText().toString();
+                if(pass.length()<8){
+                    Toast.makeText(LoginActivity.this,"密码过短！！",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                USER.edit().putString(name,name).commit();
+                USER.edit().putString(pass,pass).commit();
+                USER.edit().putString("NAME",name).commit();
+                USER.edit().putString("PASS",pass).commit();
+                Toast.makeText(LoginActivity.this,"注册成功！！",Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(TextUtils.isEmpty(userName.getText().toString())||TextUtils.isEmpty(passWord.getText().toString())){
+                    Toast.makeText(LoginActivity.this,"不能为空！！",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String name=userName.getText().toString();
+                if(!isEmail(name)){
+                    Toast.makeText(LoginActivity.this,"邮箱格式不正确！！",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(USER.getString(name,""))){
+                    Toast.makeText(LoginActivity.this,"用户名不存在！！",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String pass=passWord.getText().toString();
+                if(!pass.equals(TextUtils.isEmpty(USER.getString(pass,"")))){
+                    Toast.makeText(LoginActivity.this,"密码不正确！！",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                USER.edit().putString("NAME",name).commit();
+                USER.edit().putString("PASS",pass).commit();
+                Toast.makeText(LoginActivity.this,"登陆成功！！",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
         ImageView qqlogin=findViewById(R.id.qq_login);
@@ -59,7 +118,14 @@ public class LoginActivity extends AppCompatActivity{
             }
         }
     }
+    //判断email格式是否正确
+    public boolean isEmail(String email) {
+        String str = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
+        Pattern p = Pattern.compile(str);
+        Matcher m = p.matcher(email);
 
+        return m.matches();
+    }
 
     private class BaseUiListener implements IUiListener {
 
@@ -130,12 +196,12 @@ String openidString;
 
         @Override
         public void onError(UiError uiError) {
-            Toast.makeText(getApplicationContext(), "onError", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "登陆异常", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onCancel() {
-            Toast.makeText(getApplicationContext(), "onCancel", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "登陆取消", Toast.LENGTH_SHORT).show();
         }
 
 

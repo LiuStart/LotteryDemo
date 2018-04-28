@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="newsagent:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/newsagent.aar/53aff8e5f69d35518e41d2b0c43ff6f7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/newsagent.aar/53aff8e5f69d35518e41d2b0c43ff6f7/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

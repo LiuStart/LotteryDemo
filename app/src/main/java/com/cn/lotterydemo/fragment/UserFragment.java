@@ -1,8 +1,11 @@
 package com.cn.lotterydemo.fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +37,8 @@ public class UserFragment extends Fragment{
     private LinearLayout updata;
     private LinearLayout login;
     private ArrayList<String>list;
+    private TextView userHead;
+    private SharedPreferences USER;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,6 +70,19 @@ public class UserFragment extends Fragment{
                 startActivity(new Intent(getContext(), LoginActivity.class));
             }
         });
+        USER=getContext().getSharedPreferences("USER", Context.MODE_PRIVATE);
+        userHead=inflate.findViewById(R.id.userview);
+        if(!TextUtils.isEmpty(USER.getString("NAME",""))){
+            userHead.setText(USER.getString("NAME",""));
+        }
         return inflate;
+    }
+
+    @Override
+    public void onResume() {
+        if(!TextUtils.isEmpty(USER.getString("NAME",""))){
+            userHead.setText(USER.getString("NAME",""));
+        }
+        super.onResume();
     }
 }

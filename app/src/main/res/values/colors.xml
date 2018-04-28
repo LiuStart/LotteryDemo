@@ -156,10 +156,11 @@
     <color name="navy">#000080</color><!--海军色 -->
     <color name="black">#000000</color><!--黑色 -->
     <color name="light_gray">#ffcccccc</color>
+    <color name="text_color">#969BA3</color>
     <!--夜间模式相关颜色-->
     <color name="background">@android:color/white</color>
     <color name="night_background">#FF0E0E0E</color>
-
+    <color name="colorTextAssistant">#888888</color>
     <color name="ub_gray">#b5b5b5</color>
     <color name="ub_gray_a">#696969</color>
     <color name="card_title">#4aa8a7</color>

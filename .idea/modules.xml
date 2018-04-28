@@ -3,7 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LotteryDemo.iml" filepath="$PROJECT_DIR$/LotteryDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MobikeLibrary/MobikeLibrary.iml" filepath="$PROJECT_DIR$/MobikeLibrary/MobikeLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menulib/menulib.iml" filepath="$PROJECT_DIR$/menulib/menulib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/refresh-footer/refresh-footer.iml" filepath="$PROJECT_DIR$/refresh-footer/refresh-footer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/refresh-header/refresh-header.iml" filepath="$PROJECT_DIR$/refresh-header/refresh-header.iml" />
+      <module fileurl="file://$PROJECT_DIR$/refresh-layout/refresh-layout.iml" filepath="$PROJECT_DIR$/refresh-layout/refresh-layout.iml" />
     </modules>
   </component>
 </project>
