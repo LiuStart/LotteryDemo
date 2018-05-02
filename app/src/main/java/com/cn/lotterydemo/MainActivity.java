@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         // 初始化黑牛
         NewsAgent.init(this);
         NewsAgent.setPermission(this, true);//sdk请求权限
+        Log.d("lee","test");
         initMenuFragment();
         initViewPager();
         bt=findViewById(R.id.show);
