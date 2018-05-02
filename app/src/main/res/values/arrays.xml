@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="caipiao">
+        <item>福彩3d</item>
+        <item>双色球</item>
+        <item>超级大乐透</item>
+        <item>排列3</item>
+        <item>排列5</item>
+        <item>七乐彩</item>
+        <item>七星彩</item>
+    </string-array>
+</resources>

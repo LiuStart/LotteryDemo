@@ -1,5 +1,7 @@
 package com.cn.lotterydemo;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,6 +22,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.cn.lotterydemo.adapter.MainAdapter;
 import com.cn.lotterydemo.fragment.HomeFragment;
 import com.cn.lotterydemo.fragment.NewsFragment;
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     bt.setVisibility(View.VISIBLE);
-                   title.setText("首\t\t\t\t页");
+                   title.setText("开\t\t\t\t奖");
                     viewPager.setCurrentItem(0);
                     return true;
                 case R.id.navigation_news:
@@ -78,10 +81,12 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SDKInitializer.initialize(getApplicationContext());
         fragmentManager = getSupportFragmentManager();
        // initToolbar();
         title=findViewById(R.id.title);
-        title.setText("首\t\t\t\t页");
+        title.setText("开\t\t\t\t奖");
+
         // 开启调试模式
         NewsAgent.setDebugMode(true);
         // 初始化黑牛
@@ -101,6 +106,49 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation_bar);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         initData();
+        initCaipiaoData();
+    }
+    private void initCaipiaoData() {
+        SharedPreferences caipiao = getSharedPreferences("CAIPIAO", Context.MODE_PRIVATE);
+        caipiao.edit().putString("重庆时时彩 - 高频", "http://f.apiplus.net/cqssc-10.json").commit();
+        caipiao.edit().putString("黑龙江时时彩 - 高频", "http://f.apiplus.net/hljssc-10.json").commit();
+        caipiao.edit().putString("新疆时时彩 - 高频", "http://f.apiplus.net/xjssc-10.json").commit();
+        caipiao.edit().putString("超级大乐透", "http://f.apiplus.net/dlt-10.json").commit();
+        caipiao.edit().putString("福彩3d", "http://f.apiplus.net/fc3d-10.json").commit();
+        caipiao.edit().putString("排列3", "http://f.apiplus.net/pl3-10.json").commit();
+        caipiao.edit().putString("排列5", "http://f.apiplus.net/pl5-10.json").commit();
+        caipiao.edit().putString("七乐彩", "http://f.apiplus.net/qlc-10.json").commit();
+        caipiao.edit().putString("七星彩", "http://f.apiplus.net/qxc-10.json").commit();
+        caipiao.edit().putString("双色球", "http://f.apiplus.net/ssq-10.json").commit();
+        caipiao.edit().putString("六场半全场", "http://f.apiplus.net/zcbqc-10.json").commit();
+        caipiao.edit().putString("四场进球彩", "http://f.apiplus.net/zcjqc-10.json").commit();
+        caipiao.edit().putString("安徽11选5 - 高频", "http://f.apiplus.net/ah11x5-10.json").commit();
+        caipiao.edit().putString("北京11选5 - 高频", "http://f.apiplus.net/bj11x5-10.json").commit();
+        caipiao.edit().putString("福建11选5 - 高频", "http://f.apiplus.net/fj11x5-10.json").commit();
+        caipiao.edit().putString("广东11选5 - 高频", "http://f.apiplus.net/gd11x5-10.json").commit();
+        caipiao.edit().putString("甘肃11选5 - 高频", "http://f.apiplus.net/gs11x5-10.json").commit();
+        caipiao.edit().putString("广西11选5 - 高频", "http://f.apiplus.net/fx11x5-10.json").commit();
+        SharedPreferences caipiaoIcon = getSharedPreferences("CAIPIAOICON", Context.MODE_PRIVATE);
+        SharedPreferences caipiaoName = getSharedPreferences("CAIPIAONAME", Context.MODE_PRIVATE);
+        caipiaoIcon.edit().putInt("dlt", R.drawable.dlt).commit();
+        caipiaoIcon.edit().putInt("cqssc", R.drawable.cqssc).commit();
+        caipiaoIcon.edit().putInt("qxc", R.drawable.qxc).commit();
+        caipiaoIcon.edit().putInt("zcjqc", R.drawable.zcjqc).commit();
+        caipiaoIcon.edit().putInt("fc3d", R.drawable.fc3d).commit();
+        caipiaoIcon.edit().putInt("pl3", R.drawable.pl3).commit();
+        caipiaoIcon.edit().putInt("pl5", R.drawable.pl5).commit();
+        caipiaoIcon.edit().putInt("qlc", R.drawable.qlc).commit();
+        caipiaoIcon.edit().putInt("ssq", R.drawable.ssq).commit();
+
+        caipiaoName.edit().putString("dlt", "大乐透").commit();
+        caipiaoName.edit().putString("cqssc", "重庆时时彩").commit();
+        caipiaoName.edit().putString("qxc", "七星彩").commit();
+        caipiaoName.edit().putString("zcjqc", "四场进球彩").commit();
+        caipiaoName.edit().putString("fc3d", "福彩3D").commit();
+        caipiaoName.edit().putString("pl3", "排列3").commit();
+        caipiaoName.edit().putString("pl5","排列5").commit();
+        caipiaoName.edit().putString("qlc", "七乐彩").commit();
+        caipiaoName.edit().putString("ssq", "双色球").commit();
     }
 
 
@@ -144,36 +192,36 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 onBackPressed();
             }
         });*/
-        mToolBarTextView.setText("首\t\t\t\t页");
+        mToolBarTextView.setText("开\t\t\t\t奖");
     }
 
     private List<MenuObject> getMenuObjects() {
         List<MenuObject> menuObjects = new ArrayList<>();
-        MenuObject close = new MenuObject();
+        MenuObject close = new MenuObject("取 消");
         close.setResource(R.drawable.icn_close);
-        MenuObject send = new MenuObject("Send message");
-        send.setResource(R.drawable.icn_1);
-        MenuObject like = new MenuObject("Like profile");
-        Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.icn_2);
+        MenuObject send = new MenuObject("幸运摇一摇");
+        send.setResource(R.drawable.yaoyiyao);
+        MenuObject like = new MenuObject("我要去彩站");
+        Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.map);
         like.setBitmap(b);
 
-        MenuObject addFr = new MenuObject("Add to friends");
+        MenuObject addFr = new MenuObject("最新走势图");
         BitmapDrawable bd = new BitmapDrawable(getResources(),
-                BitmapFactory.decodeResource(getResources(), R.drawable.icn_3));
+                BitmapFactory.decodeResource(getResources(), R.drawable.zoushi));
         addFr.setDrawable(bd);
 
-        MenuObject addFav = new MenuObject("Add to favorites");
+       /* MenuObject addFav = new MenuObject("Add to favorites");
         addFav.setResource(R.drawable.icn_4);
 
         MenuObject block = new MenuObject("Block user");
         block.setResource(R.drawable.icn_5);
-
+*/
         menuObjects.add(close);
         menuObjects.add(send);
         menuObjects.add(like);
         menuObjects.add(addFr);
-        menuObjects.add(addFav);
-        menuObjects.add(block);
+        /*menuObjects.add(addFav);
+        menuObjects.add(block);*/
         return menuObjects;
     }
 
@@ -235,6 +283,21 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public void onMenuItemClick(View clickedView, int position) {
+        switch (position){
+            case 0:
+                //取消
+                break;
+            case 1:
+                startActivity(new Intent(MainActivity.this, MobikeActivity.class));
+                break;
+            case 2:
+                startActivity(new Intent(MainActivity.this, MapActivity.class));
+                break;
+            case 3:
+                startActivity(new Intent(MainActivity.this, ZoushiActivty.class));
+                break;
+
+        }
 
     }
 

@@ -128,4 +128,14 @@
             android:layout_alignParentRight="true"
             android:src="@drawable/right"/>
     </RelativeLayout>
+    <Button
+        android:id="@+id/bt_loginout"
+        android:text="注  销"
+        android:background="@drawable/bt_zhuxiao_selector"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#ffffff"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

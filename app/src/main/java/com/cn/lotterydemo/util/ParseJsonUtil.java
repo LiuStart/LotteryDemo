@@ -2,6 +2,7 @@ package com.cn.lotterydemo.util;
 
 import android.util.Log;
 
+import com.cn.lotterydemo.bean.KaiJiangInfo;
 import com.cn.lotterydemo.bean.SportBean;
 
 import org.json.JSONArray;
@@ -9,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -38,11 +40,12 @@ public class ParseJsonUtil {
         return list;
     }
 
-/*    public static List<KaiJiangInfo> ParseKaijiang(String json){
+    public static List<KaiJiangInfo> ParseKaijiang(String json){
         ArrayList list=new ArrayList();
         try {
             JSONObject object = new JSONObject(json);
             JSONArray data = object.optJSONArray("data");
+            String name=object.getString("code");
             Log.d("lee",data.length()+"");
             for (int l=0;l<data.length();l++){
                 JSONObject object1=data.getJSONObject(l);
@@ -50,6 +53,7 @@ public class ParseJsonUtil {
                 info.setKaijiangCode(object1.getString("opencode"));
                 info.setKaijiangNum(object1.getString("opentimestamp"));
                 info.setKaijiangDate(object1.getString("opentime"));
+                info.setKaijiangName(name);
                 list.add(info);
             }
 
@@ -57,7 +61,7 @@ public class ParseJsonUtil {
             e.printStackTrace();
         }
         return  list;
-    }*/
+    }
 
 
     public static ArrayList<SportBean> parseSportJson(String json){

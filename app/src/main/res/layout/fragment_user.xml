@@ -4,14 +4,6 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
     >
-    <!--    <TextView
-    android:layout_width="40dp"
-    android:text="25"
-    android:gravity="center"
-    android:textSize="18sp"
-    android:textColor="@color/white"
-    android:background="@drawable/shapetextview"
-    android:layout_height="40dp"/>-->
     <RelativeLayout
         android:id="@+id/login_view"
         android:layout_width="match_parent"
@@ -48,11 +40,138 @@
         android:layout_margin="5dp"
         android:background="#DEDEDE"
         android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="意见反馈"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right"
+            android:layout_height="15dp"/>
 
-    <Button
-        android:id="@+id/login"
-        android:text="login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="检查更新"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right"
+            android:layout_height="15dp"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="推送开关"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right"
+            android:layout_height="15dp"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="清除缓存"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right"
+            android:layout_height="15dp"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="免责声明"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right"
+            android:layout_height="15dp"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Copyright 2017 - 2018"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

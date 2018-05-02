@@ -19,19 +19,42 @@
             android:layout_height="match_parent"/>
 
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="切换彩种："
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:entries="@array/caipiao"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="1dp"/>
 
     <com.mobike.library.MobikeView
         android:id="@+id/mobike_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></com.mobike.library.MobikeView>
+        android:layout_weight="1">
+
+    </com.mobike.library.MobikeView>
 
     <Button
         android:id="@+id/test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:text="弹一下"
+        android:text="弹一下      (摇晃手机也可以哦)"
         android:textColor="@android:color/white" />
 
 </LinearLayout>

@@ -62,8 +62,10 @@ public class LoginActivity extends AppCompatActivity{
                     Toast.makeText(LoginActivity.this,"密码过短！！",Toast.LENGTH_SHORT).show();
                     return;
                 }
+                //用于存历史记录
                 USER.edit().putString(name,name).commit();
                 USER.edit().putString(pass,pass).commit();
+                //用于显示当前用户名
                 USER.edit().putString("NAME",name).commit();
                 USER.edit().putString("PASS",pass).commit();
                 Toast.makeText(LoginActivity.this,"注册成功！！",Toast.LENGTH_SHORT).show();

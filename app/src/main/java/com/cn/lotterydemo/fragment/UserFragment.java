@@ -3,10 +3,10 @@ package com.cn.lotterydemo.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.cn.lotterydemo.LoginActivity;
 import com.cn.lotterydemo.R;
 import com.cn.lotterydemo.UserInfoActivity;
+import com.cn.lotterydemo.util.BitMapUtil;
 
 import java.util.ArrayList;
 
@@ -86,20 +87,38 @@ public class UserFragment extends Fragment{
         if(!TextUtils.isEmpty(USER.getString("NAME",""))){
             userHead.setText(USER.getString("NAME",""));
         }
-        String nameHead=USER.getString("NAME","")+"HEAD";
-        if(TextUtils.isEmpty(USER.getString(nameHead,""))){
-            headImage.setBackgroundResource(R.drawable.userhead);
-        }else{
-            headImage.setImageBitmap(BitmapFactory.decodeFile(USER.getString(nameHead,"")));
-        }
+        Log.d("lee","onCreateView");
+        Log.d("lee",""+headImage.getWidth());
+        Log.d("lee",""+headImage.getHeight());
         return inflate;
     }
 
     @Override
     public void onResume() {
+        Log.d("lee","onResume");
+
         if(!TextUtils.isEmpty(USER.getString("NAME",""))){
             userHead.setText(USER.getString("NAME",""));
+            headImage.post(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("lee",""+headImage.getWidth());
+                    Log.d("lee",""+headImage.getHeight());
+                    String nameHead=USER.getString("NAME","")+"HEAD";
+                    if(TextUtils.isEmpty(USER.getString(nameHead,""))){
+                        headImage.setBackgroundResource(R.drawable.userhead);
+                    }else{
+                        headImage.setImageBitmap(BitMapUtil.loadBitmap(USER.getString(nameHead,""),headImage));
+                        // headImage.setImageBitmap(BitmapFactory.decodeFile(USER.getString(nameHead,"")));
+                    }
+                }
+            });
+        }else{
+            userHead.setText("登陆\\注册");
+            headImage.setImageDrawable(getContext().getResources().getDrawable(R.drawable.userhead));
         }
+
+
         super.onResume();
     }
 
