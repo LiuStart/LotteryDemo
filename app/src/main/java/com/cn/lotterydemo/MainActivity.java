@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkPri();
         }*/
+        Log.d("lee","test");
         initMenuFragment();
         initViewPager();
         bt=findViewById(R.id.show);
