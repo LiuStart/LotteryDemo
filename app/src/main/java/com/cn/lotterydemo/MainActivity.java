@@ -1,13 +1,19 @@
 package com.cn.lotterydemo;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -37,6 +43,8 @@ import com.yalantis.contextmenu.lib.interfaces.OnMenuItemLongClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,OnMenuItemClickListener, OnMenuItemLongClickListener {
     private List<Fragment> mList; //ViewPager的数据源
@@ -92,6 +100,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         // 初始化黑牛
         NewsAgent.init(this);
         NewsAgent.setPermission(this, true);//sdk请求权限
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(getApplicationContext());
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            checkPri();
+        }*/
         initMenuFragment();
         initViewPager();
         bt=findViewById(R.id.show);
@@ -107,7 +120,51 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         initData();
         initCaipiaoData();
+
+        /*SweetAlertDialog sd = new SweetAlertDialog(this);
+        sd.setCancelable(true);
+        sd.setCanceledOnTouchOutside(true);
+        sd.show();*/
+        /*Dialog loadingDialog = DialogUtil.createLoadingDialog(this, "正在加载");
+        loadingDialog.show();*/
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        if (null != extras) {
+            String  ss = extras.getString("message");
+            setCostomMsg(ss);
+        }
+
     }
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void checkPri() {
+        if (! Settings.canDrawOverlays(MainActivity.this)) {
+            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    Uri.parse("package:" + getPackageName()));
+            startActivityForResult(intent,10);
+        }
+    }
+
+    private void setCostomMsg(String ss) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, android.app.AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+        builder.setTitle("提示信息");
+        builder.setMessage(ss);
+        builder.setIcon(R.drawable.btn_about_on);
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        AlertDialog  alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     private void initCaipiaoData() {
         SharedPreferences caipiao = getSharedPreferences("CAIPIAO", Context.MODE_PRIVATE);
         caipiao.edit().putString("重庆时时彩 - 高频", "http://f.apiplus.net/cqssc-10.json").commit();

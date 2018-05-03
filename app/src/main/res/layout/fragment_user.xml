@@ -2,6 +2,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:toggle="http://schemas.android.com/tools"
               android:orientation="vertical"
     >
     <RelativeLayout
@@ -42,11 +43,21 @@
         android:layout_height="1dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/re_fankui"
         android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/fankui"
+            android:layout_width="25dp"
+            android:src="@drawable/fankui"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_height="25dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:text="意见反馈"
-            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/fankui"
+            android:layout_marginLeft="5dp"
             android:textSize="18sp"
             android:layout_centerVertical="true"
             android:layout_height="wrap_content"/>
@@ -64,47 +75,44 @@
         android:layout_margin="5dp"
         android:background="#DEDEDE"
         android:layout_height="1dp"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="检查更新"
-            android:layout_marginLeft="10dp"
-            android:textSize="18sp"
-            android:layout_centerVertical="true"
-            android:layout_height="wrap_content"/>
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/right"
-            android:layout_height="15dp"/>
 
-    </RelativeLayout>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_margin="5dp"
-        android:background="#DEDEDE"
-        android:layout_height="1dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/re_tuisong"
         android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/tuisong"
+            android:layout_width="25dp"
+            android:src="@drawable/tuisong"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_height="25dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:text="推送开关"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:textSize="18sp"
+            android:layout_toRightOf="@+id/tuisong"
             android:layout_centerVertical="true"
             android:layout_height="wrap_content"/>
-        <ImageView
-            android:layout_width="15dp"
+
+        <com.zcw.togglebutton.ToggleButton
+            android:id="@+id/toggle"
+            android:layout_width="54dp"
+            toggle:tbOnColor="#f00"
+            toggle:tbOffColor="#ddd"
+            android:textOff="关闭"
+            android:textOn="开启"
+            android:checked="true"
+            toggle:tbSpotColor="@color/colorPrimary"
+            toggle:tbOffBorderColor="#DEDEDE"
+            toggle:tbBorderWidth="2dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:src="@drawable/right"
-            android:layout_height="15dp"/>
+            android:layout_height="30dp" >
+        </com.zcw.togglebutton.ToggleButton>
 
     </RelativeLayout>
     <ImageView
@@ -114,12 +122,22 @@
         android:layout_height="1dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/re_qingchu"
         android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/qingchu"
+            android:layout_width="25dp"
+            android:src="@drawable/qingchu"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_height="25dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:text="清除缓存"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:textSize="18sp"
+            android:layout_toRightOf="@+id/qingchu"
             android:layout_centerVertical="true"
             android:layout_height="wrap_content"/>
         <ImageView
@@ -138,12 +156,57 @@
         android:layout_height="1dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/re_shengming"
         android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/shengming"
+            android:layout_width="25dp"
+            android:src="@drawable/shengming"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_height="25dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:text="免责声明"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:textSize="18sp"
+            android:layout_toRightOf="@+id/shengming"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right"
+            android:layout_height="15dp"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/re_gengxin"
+        android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/gengxin"
+            android:layout_width="25dp"
+            android:src="@drawable/gengxin"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_height="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="检查更新"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
+            android:layout_toRightOf="@+id/gengxin"
             android:layout_centerVertical="true"
             android:layout_height="wrap_content"/>
         <ImageView

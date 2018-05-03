@@ -1,9 +1,14 @@
 package com.cn.lotterydemo.fragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,11 +19,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.cn.lotterydemo.FanKuiActivity;
 import com.cn.lotterydemo.LoginActivity;
 import com.cn.lotterydemo.R;
+import com.cn.lotterydemo.ShuoMingActivity;
 import com.cn.lotterydemo.UserInfoActivity;
 import com.cn.lotterydemo.util.BitMapUtil;
+import com.cn.lotterydemo.util.CheckUtil;
+import com.cn.lotterydemo.util.DialogUtil;
 
 import java.util.ArrayList;
 
@@ -27,7 +37,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UserFragment extends Fragment{
+public class UserFragment extends Fragment implements View.OnClickListener {
 
 
     public UserFragment() {
@@ -90,6 +100,18 @@ public class UserFragment extends Fragment{
         Log.d("lee","onCreateView");
         Log.d("lee",""+headImage.getWidth());
         Log.d("lee",""+headImage.getHeight());
+        com.zcw.togglebutton.ToggleButton toggleButton=inflate.findViewById(R.id.toggle);
+        toggleButton.setToggleOn();
+        RelativeLayout fankui=inflate.findViewById(R.id.re_fankui);
+        fankui.setOnClickListener(this);
+        RelativeLayout gengxin=inflate.findViewById(R.id.re_gengxin);
+        gengxin.setOnClickListener(this);
+        RelativeLayout tuisong=inflate.findViewById(R.id.re_tuisong);
+        tuisong.setOnClickListener(this);
+        RelativeLayout qingchu=inflate.findViewById(R.id.re_qingchu);
+        qingchu.setOnClickListener(this);
+        RelativeLayout shengming=inflate.findViewById(R.id.re_shengming);
+        shengming.setOnClickListener(this);
         return inflate;
     }
 
@@ -121,5 +143,53 @@ public class UserFragment extends Fragment{
 
         super.onResume();
     }
+    private Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            loadingDialog.dismiss();
+            Toast.makeText(getContext(),"当前为最新版本！",Toast.LENGTH_SHORT).show();
+        }
+    };
+    Dialog loadingDialog;
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.re_fankui:
+                    startActivity(new Intent(getContext(), FanKuiActivity.class));
+                break;
+            case R.id.re_gengxin:
+                    if(CheckUtil.isNetworkAvailable(getContext())){
+                        loadingDialog = DialogUtil.createLoadingDialog(getContext(), "检查更新中");
+                        loadingDialog.show();
+                        handler.sendEmptyMessageDelayed(1,1000);
+                    }else{
+                        Toast.makeText(getContext(),"当前网络不可用！",Toast.LENGTH_SHORT).show();
+                    }
+                break;
+            case R.id.re_tuisong:
+                break;
+            case R.id.re_qingchu:
+                AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+                builder.setTitle("提示信息");
+                builder.setMessage("确定要删除吗？");
+                builder.setPositiveButton("删除", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getContext(),"删除成功！",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
+                builder.create();
+                builder.show();
+                break;
+            case R.id.re_shengming:
+                startActivity(new Intent(getContext(), ShuoMingActivity.class));
+                break;
+        }
+    }
 }

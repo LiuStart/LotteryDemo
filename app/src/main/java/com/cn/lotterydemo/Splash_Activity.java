@@ -64,7 +64,7 @@ public class Splash_Activity extends Activity {
         //幸运28 应用宝 ID 201803201616
         //华为：http://www.27305.com/frontApi/getAboutUs?appid=(appid)
       //  1804171052
-        StringRequest request = new StringRequest(Request.Method.GET, "http://app.27305.com/appid.php?appid=1804171052", new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, "http://app.27305.com/appid.php?appid=1804191614", new Response.Listener<String>() {
 
             //  StringRequest request = new StringRequest(Request.Method.GET, "http://www.6122c.com/Lottery_server/get_init_data?appid=baid2018no8&type=android", new Response.Listener<String>() {
       //    StringRequest request = new StringRequest(Request.Method.GET, "http://www.27305.com/frontApi/getAboutUs?appid=1803072129", new Response.Listener<String>() {

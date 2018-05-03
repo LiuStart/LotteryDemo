@@ -35,10 +35,12 @@ public class LoginActivity extends AppCompatActivity{
     private SharedPreferences USER;
     private EditText userName;
     private EditText passWord;
+    private boolean CHECK=false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+        CHECK=false;
         USER =getSharedPreferences("USER",MODE_PRIVATE);
         mTencent = Tencent.createInstance("1106779649",getApplicationContext());
         Button login=findViewById(R.id.bt_login);
@@ -53,9 +55,13 @@ public class LoginActivity extends AppCompatActivity{
                     return;
                 }
                 String name=userName.getText().toString();
-                if(!isEmail(name)){
-                    Toast.makeText(LoginActivity.this,"邮箱格式不正确！！",Toast.LENGTH_SHORT).show();
-                    return;
+                if(CHECK){
+
+                }else{
+                    if(!isEmail(name)){
+                        Toast.makeText(LoginActivity.this,"邮箱格式不正确！！",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                 }
                 String pass=passWord.getText().toString();
                 if(pass.length()<8){
@@ -132,21 +138,21 @@ public class LoginActivity extends AppCompatActivity{
     private class BaseUiListener implements IUiListener {
 
 // onError onCancel 方法具体内容自己搜索
-String openidString;
+        String openidString;
         public void onComplete(Object response) {
             // TODO Auto-generated method stub
-            Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "授权成功,已生成用户名！", Toast.LENGTH_LONG).show();
             try {
                 //获得的数据是JSON格式的，获得你想获得的内容
                 //如果你不知道你能获得什么，看一下下面的LOG
-                Log.v("----TAG--", "-------------" + response.toString());
+                Log.d("lee", "-------------" + response.toString());
                 openidString = ((JSONObject) response).getString("openid");
                 mTencent.setOpenId(openidString);
               //  saveUser("44", "text", "text", 1);
                 mTencent.setAccessToken(((JSONObject) response).getString("access_token"), ((JSONObject) response).getString("expires_in"));
 
 
-                Log.v("TAG", "-------------" + openidString);
+                Log.d("lee", "-------------" + openidString);
                 //access_token= ((JSONObject) response).getString("access_token");
                 //expires_in = ((JSONObject) response).getString("expires_in");
             } catch (JSONException e) {
@@ -169,12 +175,16 @@ String openidString;
                 public void onComplete(Object o) {
                     //用户信息获取到了
                     try {
-                        Log.v("用户名", ((JSONObject) o).getString("nickname"));
-                        Log.v("用户姓名", ((JSONObject) o).getString("gender"));
-                        Log.v("UserInfo",o.toString());
-                        Intent intent1 = new Intent(LoginActivity.this,MainActivity.class);
+                        CHECK=true;
+                        Log.d("用户名", ((JSONObject) o).getString("nickname"));
+                        Log.d("用户姓名", ((JSONObject) o).getString("gender"));
+                        Log.d("UserInfo",o.toString());
+                        int code = (int)(Math.random() * (400000000 -100000000)) + 100000000; // 产生1000-9999之间的一个随机数
+                        String codestr = String.valueOf(code);
+                        userName.setText(codestr);
+                        /*Intent intent1 = new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent1);
-                        finish();
+                        finish();*/
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -205,7 +215,11 @@ String openidString;
         public void onCancel() {
             Toast.makeText(getApplicationContext(), "登陆取消", Toast.LENGTH_SHORT).show();
         }
+    }
 
-
+    @Override
+    protected void onDestroy() {
+        CHECK=false;
+        super.onDestroy();
     }
 }

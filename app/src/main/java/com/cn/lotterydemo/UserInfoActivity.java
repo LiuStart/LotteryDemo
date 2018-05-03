@@ -227,7 +227,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(UserInfoActivity.this, "昵称不能为空", Toast.LENGTH_SHORT).show();
                 } else {
                     USER.edit().putString("USERNAME", username.getText().toString().trim()).commit();
-                    tv_nicheng.setText("用户昵称：" + username.getText().toString().trim());
+                    tv_nicheng.setText( username.getText().toString().trim());
                     USER.edit().putString((USER.getString("NAME","")+"NICHENG"),username.getText().toString()).commit();
                     Toast.makeText(UserInfoActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
                     alertDialog.dismiss();

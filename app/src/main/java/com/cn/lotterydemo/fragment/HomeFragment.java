@@ -1,7 +1,7 @@
 package com.cn.lotterydemo.fragment;
 
 
-import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -30,6 +30,7 @@ import com.cn.lotterydemo.WaveSwipeStyleActivity;
 import com.cn.lotterydemo.adapter.KaijiangAdapter;
 import com.cn.lotterydemo.bean.KaiJiangInfo;
 import com.cn.lotterydemo.util.CheckUtil;
+import com.cn.lotterydemo.util.DialogUtil;
 import com.cn.lotterydemo.util.ParseJsonUtil;
 
 import java.util.ArrayList;
@@ -45,8 +46,6 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
-
-
     private Spinner spinner;
     private ListView  listview;
     private WebView webView;
@@ -56,10 +55,22 @@ public class HomeFragment extends Fragment {
     private Handler handler =new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            listView.setAdapter(new KaijiangAdapter(getContext(), kaiJiangInfoArrayList));
+            if(msg.what==1){
+                listView.setAdapter(new KaijiangAdapter(getContext(), kaiJiangInfoArrayList));
+               handler.sendEmptyMessage(3);
+            }
+            if(msg.what==2){
+                handler.sendEmptyMessage(3);
+                Toast.makeText(getContext(),"当前网络不可用",Toast.LENGTH_SHORT).show();
+            }
+            if(msg.what==3){
+                if(loadingDialog!=null&&loadingDialog.isShowing()){
+                    loadingDialog.dismiss();
+                }
+            }
+
         }
     };
-    private AlertDialog alertDialog;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,25 +92,27 @@ public class HomeFragment extends Fragment {
         listView=inflate.findViewById(R.id.listview);
         showDialog();
         initCaipiao();
-        getLotteryData();
+        if(CheckUtil.isNetworkAvailable(getContext())){
+            getLotteryData();
+        }else{
+            handler.sendEmptyMessage(2);
+        }
+
         return inflate;
     }
-
+    Dialog loadingDialog;
     private void showDialog(){
-        /*ProgressBar bar=new ProgressBar(getContext());
-        *//*AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
-        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.show_dialog, null);
-        builder.setView(inflate);
-        alertDialog = builder.create();*//*
-        bar.s*/
+        loadingDialog = DialogUtil.createLoadingDialog(getContext(), "加载中..");
+        loadingDialog.show();
+      //  loadingDialog = DialogUtil.showWaitDialog(getContext(), "加载中...");
     }
 
     private ArrayList<KaiJiangInfo> kaiJiangInfoArrayList;
     private RequestQueue mRequestQueue = null;
     private void getLotteryData() {
         if (!CheckUtil.isNetworkAvailable(getContext())) {
-            Toast.makeText(getContext(), "没有检测到数据连接，请检查设备网络状态！", Toast.LENGTH_SHORT).show();
-          //  handler.sendEmptyMessage(2);
+          //  Toast.makeText(getContext(), "没有检测到数据连接，请检查设备网络状态！", Toast.LENGTH_SHORT).show();
+            handler.sendEmptyMessage(2);
             return;
         }
         kaiJiangInfoArrayList = new ArrayList<>();
@@ -134,6 +147,7 @@ public class HomeFragment extends Fragment {
                             Log.d("lee", volleyError.toString());
                          //   handler.sendEmptyMessage(2);
                             Toast.makeText(getContext(), "数据获取失败，请检查网络", Toast.LENGTH_SHORT).show();
+                            handler.sendEmptyMessage(3);
                         }
                     });
                     mRequestQueue.add(request);
