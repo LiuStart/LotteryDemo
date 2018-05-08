@@ -12,9 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -28,6 +26,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.baidu.mapapi.SDKInitializer;
 import com.cn.cqssclee.adapter.MainAdapter;
 import com.cn.cqssclee.fragment.HomeFragment;
@@ -46,16 +46,14 @@ import java.util.List;
 
 import cn.jpush.android.api.JPushInterface;
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,OnMenuItemClickListener, OnMenuItemLongClickListener {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,OnMenuItemClickListener, OnMenuItemLongClickListener, BottomNavigationBar.OnTabSelectedListener {
     private List<Fragment> mList; //ViewPager的数据源
     private ViewPager viewPager;
-    private BottomNavigationView navigation;
+    private BottomNavigationBar bottomNavigationBar;
     public FragmentManager fragmentManager;
     private SharedPreferences sp;
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
+       /* @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Log.d("lee",item.getGroupId()+"");
             switch (item.getItemId()) {
@@ -81,8 +79,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                     return true;
             }
             return false;
-        }
-    };
+        }*/
    private ImageView bt;
    private TextView title;
     @Override
@@ -93,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         fragmentManager = getSupportFragmentManager();
        // initToolbar();
         title=findViewById(R.id.title);
-        title.setText("开\t\t\t\t奖");
+        title.setText("首\t\t\t\t页");
 
         // 开启调试模式
         NewsAgent.setDebugMode(true);
@@ -117,8 +114,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 }
             }
         });
-        navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation_bar);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        bottomNavigationBar =findViewById(R.id.bottom_navigation_bar);
+        bottomNavigationBar.setTabSelectedListener(this);
+        initBottomNavigationBar();
         initData();
         initCaipiaoData();
 
@@ -252,7 +250,64 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         });*/
         mToolBarTextView.setText("开\t\t\t\t奖");
     }
+    //初始化底部导航条
+    private void initBottomNavigationBar() {
+        bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+        bottomNavigationBar.setTabSelectedListener(this);
+        /*badgeItem = new BadgeItem()
+                .setHideOnSelect(true) //设置被选中时隐藏角标
+                ;*/
+        /**
+         * 设置模式
+         * 1、BottomNavigationBar.MODE_DEFAULT 默认
+         * 如果Item的个数<=3就会使用MODE_FIXED模式，否则使用MODE_SHIFTING模式
+         *
+         * 2、BottomNavigationBar.MODE_FIXED 固定大小
+         * 填充模式，未选中的Item会显示文字，没有换挡动画。
+         *
+         * 3、BottomNavigationBar.MODE_SHIFTING 不固定大小
+         * 换挡模式，未选中的Item不会显示文字，选中的会显示文字。在切换的时候会有一个像换挡的动画
+         */
+        bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
+        /**
+         * 设置背景的样式
+         * 1、BottomNavigationBar.BACKGROUND_STYLE_DEFAULT 默认
+         * 如果设置的Mode为MODE_FIXED，将使用BACKGROUND_STYLE_STATIC 。
+         * 如果Mode为MODE_SHIFTING将使用BACKGROUND_STYLE_RIPPLE。
+         *
+         * 2、BottomNavigationBar.BACKGROUND_STYLE_STATIC 导航条的背景色是白色，
+         * 加上setBarBackgroundColor（）可以设置成你所需要的任何背景颜色
+         * 点击的时候没有水波纹效果
+         *
+         * 3、BottomNavigationBar.BACKGROUND_STYLE_RIPPLE 导航条的背景色是你设置的处于选中状态的
+         * Item的颜色（ActiveColor），也就是setActiveColorResource这个设置的颜色
+         * 点击的时候有水波纹效果
+         */
+        bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
+        //设置导航条背景颜色
+        //在BACKGROUND_STYLE_STATIC下，表示整个容器的背景色。
+        // 而在BACKGROUND_STYLE_RIPPLE下，表示选中Item的图标和文本颜色。默认 Color.WHITE
+        bottomNavigationBar.setBarBackgroundColor(R.color.bg_bottom);
+        //选中时的颜色,在BACKGROUND_STYLE_STATIC下，表示选中Item的图标和文本颜色。
+        // 而在BACKGROUND_STYLE_RIPPLE下，表示整个容器的背景色。默认Theme's Primary Color
+        //bottomNavigationBar.setActiveColor(R.color.black);
+        //未选中时的颜色，表示未选中Item中的图标和文本颜色。默认为 Color.LTGRAY
+        //bottomNavigationBar.setInActiveColor("#FFFFFF");
 
+
+
+        bottomNavigationBar.addItem(new BottomNavigationItem( R.drawable.ic_home_black_24dp, "首页").setActiveColorResource(R.color.colorPrimary))
+                .addItem(new BottomNavigationItem(R.drawable.ic_fiber_new_black_24dp, "资讯").setActiveColorResource(R.color.colorPrimary))
+                .addItem(new BottomNavigationItem(R.drawable.ic_fitness_center_black_24dp, "体育").setActiveColorResource(R.color.colorPrimary))
+                .addItem(new BottomNavigationItem(R.drawable.ic_person_black_24dp, "我的").setActiveColorResource(R.color.colorPrimary))
+                .setFirstSelectedPosition(0)
+                .initialise(); //所有的设置需在调用该方法前完成
+
+        //如果使用颜色的变化不足以展示一个选项Item的选中与非选中状态，
+        // 可以使用BottomNavigationItem.setInActiveIcon()方法来设置。
+//        new BottomNavigationItem(R.drawable.ic_home_white_24dp, "公交")//这里表示选中的图片
+//                .setInactiveIcon(ContextCompat.getDrawable(this,R.mipmap.ic_launcher));//非选中的图片
+    }
     private List<MenuObject> getMenuObjects() {
         List<MenuObject> menuObjects = new ArrayList<>();
         MenuObject close = new MenuObject("取 消");
@@ -284,28 +339,46 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     @Override
+    public void onTabSelected(int position) {
+       // title.setText("我\t\t\t\t的");
+        viewPager.setCurrentItem(position);
+        switch (position){
+            case 0:
+                title.setText("首\t\t\t\t页");
+                break;
+            case 1:
+                title.setText("资\t\t\t\t讯");
+                break;
+            case 2:
+                title.setText("体\t\t\t\t育");
+                break;
+            case 3:
+                title.setText("我\t\t\t\t的");
+                break;
+        }
+    }
+
+    @Override
+    public void onTabUnselected(int position) {
+
+    }
+
+    @Override
+    public void onTabReselected(int position) {
+
+    }
+
+    @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
 
     }
 
+
     @Override
     public void onPageSelected(int position) {
         //ViewPager滑动
-        switch (position){
-            case 0:
-                navigation.setSelectedItemId(R.id.navigation_home);
-                break;
-            case 1:
-                navigation.setSelectedItemId(R.id.navigation_news);
-                break;
-            case 2:
-                navigation.setSelectedItemId(R.id.navigation_sport);
-                break;
-            case 3:
-                navigation.setSelectedItemId(R.id.navigation_user);
-                break;
-        }
+            bottomNavigationBar.selectTab(position);
 
     }
 
@@ -395,5 +468,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         sp.edit().putInt("太阳",R.drawable.ty).commit();
         sp.edit().putInt("雄鹿",R.drawable.xl).commit();
         sp.edit().putInt("勇士",R.drawable.ys).commit();
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

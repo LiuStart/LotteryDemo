@@ -2,7 +2,6 @@ package com.cn.cqssclee.fragment;
 
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -26,21 +24,25 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cn.cqssclee.R;
-import com.cn.cqssclee.WaveSwipeStyleActivity;
 import com.cn.cqssclee.adapter.KaijiangAdapter;
 import com.cn.cqssclee.bean.KaiJiangInfo;
 import com.cn.cqssclee.util.CheckUtil;
+import com.cn.cqssclee.util.CubeInTransformer;
 import com.cn.cqssclee.util.DialogUtil;
+import com.cn.cqssclee.util.GlideImageLoader;
 import com.cn.cqssclee.util.ParseJsonUtil;
+import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnBannerListener {
 
 
     public HomeFragment() {
@@ -51,7 +53,9 @@ public class HomeFragment extends Fragment {
     private WebView webView;
     private SharedPreferences sp;
     private RelativeLayout head;
-   private ListView listView;
+    private ListView listView;
+    private Banner banner;
+    List list ;
     private Handler handler =new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -75,21 +79,21 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_home, container, false);
-        Button test=inflate.findViewById(R.id.test);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), WaveSwipeStyleActivity.class));
-            }
-        });
-        Button mobike=inflate.findViewById(R.id.mobike);
-        mobike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        String[] urls = getContext().getResources().getStringArray(R.array.url);
+        list = Arrays.asList(urls);
         listView=inflate.findViewById(R.id.listview);
+        banner=inflate.findViewById(R.id.banner);
+        String[] tips = getResources().getStringArray(R.array.title);
+        List list = Arrays.asList(urls);
+        List list1 = Arrays.asList(tips);
+        List<String>  titles= new ArrayList(list1);
+        banner.setBannerAnimation(CubeInTransformer.class);
+        banner.setDelayTime(1500);
+        banner.setBannerTitles(titles);
+        banner.setImages(list)
+                .setImageLoader(new GlideImageLoader())
+                .setOnBannerListener(this)
+                .start();
         showDialog();
         initCaipiao();
         if(CheckUtil.isNetworkAvailable(getContext())){
@@ -169,5 +173,15 @@ public class HomeFragment extends Fragment {
         urlList.add("pl5");
         urlList.add("qlc");
         urlList.add("ssq");
+    }
+
+    @Override
+    public void OnBannerClick(int position) {
+        int k=0;
+        k=position+2;
+        if(k==6){
+            k=1;
+        }
+        Toast.makeText(getContext(),"你点击了："+k,Toast.LENGTH_SHORT).show();
     }
 }

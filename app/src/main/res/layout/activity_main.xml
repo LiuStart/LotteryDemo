@@ -24,6 +24,7 @@
             android:id="@+id/show"
             android:src="@drawable/btn_add"
             android:layout_width="wrap_content"
+            android:visibility="gone"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:layout_height="match_parent"/>
@@ -38,11 +39,9 @@
         android:layout_width="match_parent"
         android:background="#DEDEDE"
         android:layout_height="1dp"/>
-    <android.support.design.widget.BottomNavigationView
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="#FEFEFE"
-        app:menu="@menu/navigation"/>
+        android:layout_height="55dp" />
 
 </LinearLayout>

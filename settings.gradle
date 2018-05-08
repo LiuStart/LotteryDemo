@@ -1,1 +1,1 @@
-include ':app', ':refresh-layout', 'refresh-layout', 'refresh-header', 'refresh-footer', ':MobikeLibrary', ':menulib', 'sweetlibrary'
+include ':app', ':refresh-layout', 'refresh-layout', 'refresh-header', 'refresh-footer', ':MobikeLibrary', ':menulib', 'sweetlibrary', ':banner'

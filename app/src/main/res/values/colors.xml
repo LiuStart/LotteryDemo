@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00C1E1</color>
+    <color name="colorPrimary">#2498B1</color>
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color><!--白色 -->
@@ -171,5 +171,5 @@
     <color name="normal_btn_bg">#4CB849</color>
     <color name="selected_btn_bg">#0C6609</color>
     <color name="user">#EEEBEB</color>
-
+    <color name="bg_bottom">#fefefe</color>
 </resources>
