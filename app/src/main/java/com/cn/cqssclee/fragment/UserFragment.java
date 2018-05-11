@@ -169,7 +169,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
             case R.id.re_tuisong:
                 break;
             case R.id.re_qingchu:
-                AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+                AlertDialog.Builder builder=new AlertDialog.Builder(getContext(),AlertDialog.THEME_HOLO_LIGHT);
                 builder.setTitle("提示信息");
                 builder.setMessage("确定要删除吗？");
                 builder.setPositiveButton("删除", new DialogInterface.OnClickListener() {
@@ -184,8 +184,8 @@ public class UserFragment extends Fragment implements View.OnClickListener {
 
                     }
                 });
-                builder.create();
-                builder.show();
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
                 break;
             case R.id.re_shengming:
                 startActivity(new Intent(getContext(), ShuoMingActivity.class));

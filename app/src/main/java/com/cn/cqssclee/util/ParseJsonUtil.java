@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.cn.cqssclee.bean.KaiJiangInfo;
 import com.cn.cqssclee.bean.SportBean;
+import com.cn.cqssclee.bean.WeatherBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -124,5 +125,85 @@ public class ParseJsonUtil {
             Log.d("lee","parse:::"+e.toString());
         }
         return sportlist;
+    }
+
+    public static WeatherBean parseWeather(String data){
+        WeatherBean weatherBean=new WeatherBean();
+        try {
+            JSONObject object=new JSONObject(data);
+            JSONObject object1 = object.optJSONObject("result");
+            JSONObject object2 = object1.optJSONObject("result");
+            //城市
+            String place=object2.getString("city");
+            weatherBean.setPlace(place);
+            //天气
+            String weather = object2.getString("weather");
+            weatherBean.setDesc(weather);
+            //温度
+            String temp = object2.getString("temp");
+            weatherBean.setTemp(temp);
+            //风
+            String wind = object2.getString("winddirect");
+            weatherBean.setWind(wind);
+            //几级
+            String windpower = object2.getString("windpower");
+            weatherBean.setWindpower(windpower);
+            //更新时间
+            String updatetime = object2.getString("updatetime");
+            weatherBean.setUpdateTime(updatetime.split(" ")[1]);
+            //湿度
+            String humidity = object2.getString("humidity");
+            weatherBean.setShidu(humidity);
+            JSONArray index = object2.optJSONArray("index");
+            for (int k=0;k<index.length();k++){
+                if(k>0){
+                    JSONObject jsonObject = index.getJSONObject(k);
+                    String iname = jsonObject.getString("iname");
+                    String ivalue = jsonObject.getString("ivalue");
+                    String detail = jsonObject.getString("detail");
+                    switch (k){
+
+                        case 1:
+                            weatherBean.setYd(iname+"\t\t\t"+ivalue);
+                            weatherBean.setYdmsg(detail);
+
+                            break;
+                        case 2:
+                            weatherBean.setSundesc(iname+"\t\t\t"+ivalue);
+                            weatherBean.setSunmsg(detail);
+
+
+                            break;
+                        case 3:
+                            weatherBean.setGm(iname+"\t\t\t"+ivalue);
+                            weatherBean.setGmmsg(detail);
+
+                            break;
+                        case 4:
+                            weatherBean.setXc(iname+"\t\t\t"+ivalue);
+                            weatherBean.setXcmsg(detail);
+
+                            break;
+                        case 6:
+                            weatherBean.setCy(iname+"\t\t\t"+ivalue);
+                            weatherBean.setCymsg(detail);
+                            break;
+                    }
+                }
+            }
+            JSONObject aqi = object2.optJSONObject("aqi");
+            //pm
+            String ipm2_5 = aqi.getString("ipm2_5");
+            weatherBean.setPm(ipm2_5);
+            //空气状况
+            String pmdesc = aqi.getString("quality");
+            weatherBean.setPmdesc(pmdesc);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return weatherBean;
+
     }
 }

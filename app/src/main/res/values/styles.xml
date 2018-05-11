@@ -17,6 +17,7 @@
         <item name="android:background">?attr/colorPrimary</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
+
     <!-- 浅灰色17号字体样式 -->
     <style name="textView_light_gray_size17" parent="width_width">
         <item name="android:textColor">@color/colorPrimary</item>

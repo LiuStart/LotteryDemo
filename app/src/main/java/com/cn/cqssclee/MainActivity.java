@@ -134,6 +134,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
 
     }
+
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void checkPri() {
         if (! Settings.canDrawOverlays(MainActivity.this)) {

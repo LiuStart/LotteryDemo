@@ -2,6 +2,7 @@ package com.cn.cqssclee.fragment;
 
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,6 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cn.cqssclee.R;
+import com.cn.cqssclee.WeatherActivity;
 import com.cn.cqssclee.adapter.KaijiangAdapter;
 import com.cn.cqssclee.bean.KaiJiangInfo;
 import com.cn.cqssclee.util.CheckUtil;
@@ -32,6 +34,7 @@ import com.cn.cqssclee.util.DialogUtil;
 import com.cn.cqssclee.util.GlideImageLoader;
 import com.cn.cqssclee.util.ParseJsonUtil;
 import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
@@ -90,6 +93,7 @@ public class HomeFragment extends Fragment implements OnBannerListener {
         banner.setBannerAnimation(CubeInTransformer.class);
         banner.setDelayTime(1500);
         banner.setBannerTitles(titles);
+        banner.setBannerStyle(BannerConfig.NUM_INDICATOR_TITLE);
         banner.setImages(list)
                 .setImageLoader(new GlideImageLoader())
                 .setOnBannerListener(this)
@@ -182,6 +186,13 @@ public class HomeFragment extends Fragment implements OnBannerListener {
         if(k==6){
             k=1;
         }
+        if(k==1){
+            Intent intent = new Intent(getContext(), WeatherActivity.class);
+            //url 要跳转的URL
+            //  intent.putExtra("url","http://finance.sina.cn/consume/bgt/2018-05-10/detail-ihaichqz5844325.d.html?cre=tianyi&mod=wfin&loc=10&r=25&doct=0&rfunc=100&tj=none&tr=25");
+            startActivity(intent);
+        }
         Toast.makeText(getContext(),"你点击了："+k,Toast.LENGTH_SHORT).show();
+
     }
 }

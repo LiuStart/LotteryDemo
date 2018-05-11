@@ -21,6 +21,9 @@ android {
     repositories{
         flatDir {dirs'libs'}
     }
+    packagingOptions {
+        exclude 'org/apache/http/entity/mime/version.properties'
+    }
 }
 
 dependencies {

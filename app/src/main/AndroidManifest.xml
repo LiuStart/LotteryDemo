@@ -119,6 +119,8 @@
         <activity android:name="com.cn.cqssclee.ZoushiActivty"></activity>
         <activity android:name="com.cn.cqssclee.ShuoMingActivity"></activity>
         <activity android:name="com.cn.cqssclee.FanKuiActivity"></activity>
+        <activity android:name=".MyWebActivity"></activity>
+        <activity android:name=".WeatherActivity"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->
