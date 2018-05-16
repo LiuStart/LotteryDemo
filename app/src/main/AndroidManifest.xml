@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.cn.cqssclee">
+          package="com.cn.lotterydemo">
     <permission
-        android:name="com.cn.cqssclee.permission.JPUSH_MESSAGE"
+        android:name="com.cn.lotterydemo.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature"/>
-    <uses-permission android:name="com.cn.cqssclee.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="com.cn.lotterydemo.permission.JPUSH_MESSAGE"/>
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -51,9 +51,9 @@
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="VfX1MR9YswRmeGZKaqi02GEg7mZEGrVv" />
+            android:value="PIaYzfwYHAXcXekfGeta7VqTH0rElBLW" />
         <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
-        <meta-data android:name="JPUSH_APPKEY" android:value="7d496addffd5ab271238a70f" /> <!--  </>值来自开发者平台取得的AppKey-->
+        <meta-data android:name="JPUSH_APPKEY" android:value="908aeb51af93184ffaaf7c54" /> <!--  </>值来自开发者平台取得的AppKey-->
 
         <meta-data android:name="MANA_APPKEY"
                    android:value="NEWSSDK-418992"></meta-data>
@@ -72,7 +72,7 @@
         <activity android:name="com.stonesun.adagent.activitys.ContentAdActivity" />
         <activity android:name="com.stonesun.newssdk.permission.PermissionActivity" />
         <activity
-            android:name="com.cn.cqssclee.MainActivity"
+            android:name="com.cn.lotterydemo.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="jpush.testAction" />
@@ -95,32 +95,35 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
-        <activity android:name="com.cn.cqssclee.LoginActivity"
+        <activity android:name="com.cn.lotterydemo.LoginActivity"
                   android:label="@string/lable_login"
                   android:theme="@style/AppTheme"></activity>
-        <activity android:name="com.cn.cqssclee.WaveSwipeStyleActivity"
+        <activity android:name="com.cn.lotterydemo.WaveSwipeStyleActivity"
                   android:theme="@style/AppTheme"
                   android:screenOrientation="portrait"></activity>
-        <activity android:name="com.cn.cqssclee.MobikeActivity"
+        <activity android:name="com.cn.lotterydemo.MobikeActivity"
                   android:label="@string/lable_mobike"
                   android:theme="@style/AppTheme"></activity>
-        <activity android:name="com.cn.cqssclee.WebViewActivity"></activity>
-        <activity android:name="com.cn.cqssclee.UserInfoActivity"
+        <activity android:name="com.cn.lotterydemo.WebViewActivity"></activity>
+        <activity android:name="com.cn.lotterydemo.UserInfoActivity"
                   android:label="@string/user_info"></activity>
-        <activity android:name="com.cn.cqssclee.Splash_Activity"
+        <activity android:name="com.cn.lotterydemo.Splash_Activity"
                   android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.cn.cqssclee.MapActivity"
+        <activity android:name="com.cn.lotterydemo.MapActivity"
                   android:label="@string/lable_map"></activity>
-        <activity android:name="com.cn.cqssclee.ZoushiActivty"></activity>
-        <activity android:name="com.cn.cqssclee.ShuoMingActivity"></activity>
-        <activity android:name="com.cn.cqssclee.FanKuiActivity"></activity>
-        <activity android:name=".MyWebActivity"></activity>
-        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name="com.cn.lotterydemo.ZoushiActivty"></activity>
+        <activity android:name="com.cn.lotterydemo.ShuoMingActivity"></activity>
+        <activity android:name="com.cn.lotterydemo.FanKuiActivity"></activity>
+        <activity android:name="com.cn.lotterydemo.MyWebActivity"></activity>
+        <activity android:name="com.cn.lotterydemo.WeatherActivity"></activity>
+        <activity android:name="com.cn.lotterydemo.SsqActivity"></activity>
+        <activity android:name="com.cn.lotterydemo.NewsEveryDay"></activity>
+        <activity android:name="com.cn.lotterydemo.HistoryActivity"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->
@@ -139,7 +142,7 @@
             <intent-filter>
                 <action android:name="cn.jpush.android.ui.PushActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.cn.cqssclee" />
+                <category android:name="com.cn.lotterydemo" />
             </intent-filter>
         </activity>
 
@@ -157,7 +160,7 @@
 
         <!-- since 3.1.0 Required SDK 核心功能-->
         <provider
-            android:authorities="com.cn.cqssclee.DownloadProvider"
+            android:authorities="com.cn.lotterydemo.DownloadProvider"
             android:name="cn.jpush.android.service.DownloadProvider"
             android:exported="true"
             />
@@ -168,7 +171,7 @@
             android:exported="false">
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   <!--Required  显示通知栏 -->
-                <category android:name="com.cn.cqssclee" />
+                <category android:name="com.cn.lotterydemo" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -188,21 +191,21 @@
 
         <!-- since 3.0.9 Required SDK 核心功能-->
         <provider
-            android:authorities="com.cn.cqssclee.DataProvider"
+            android:authorities="com.cn.lotterydemo.DataProvider"
             android:name="cn.jpush.android.service.DataProvider"
             android:exported="false"
             />
 
 
         <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调-->
-        <receiver android:name="com.cn.cqssclee.util.MyJPushMessageReceiver">
+        <receiver android:name="com.cn.lotterydemo.util.MyJPushMessageReceiver">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
-                <category android:name="com.cn.cqssclee"></category>
+                <category android:name="com.cn.lotterydemo"></category>
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.cn.cqssclee.util.MyReceiver"
+            android:name="com.cn.lotterydemo.util.MyReceiver"
             android:exported="false"
             android:enabled="true">
             <intent-filter>
@@ -211,7 +214,7 @@
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!--Required  用户接收SDK通知栏信息的intent-->
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!--Required  用户打开自定义通知栏的intent-->
                 <action android:name="cn.jpush.android.intent.CONNECTION" /><!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                <category android:name="com.cn.cqssclee" />
+                <category android:name="com.cn.lotterydemo" />
             </intent-filter>
         </receiver>
     </application>
