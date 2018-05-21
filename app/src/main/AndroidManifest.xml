@@ -124,6 +124,7 @@
         <activity android:name="com.qujing.leeyong.lottery.SsqActivity"></activity>
         <activity android:name="com.qujing.leeyong.lottery.NewsEveryDay"></activity>
         <activity android:name="com.qujing.leeyong.lottery.HistoryActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->

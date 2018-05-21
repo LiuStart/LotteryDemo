@@ -10,7 +10,6 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -38,7 +37,7 @@ public class Splash_Activity extends Activity {
                 startActivity(intent);
                 finish();
             }else if(msg.what == 2){
-                Intent intent = new Intent(Splash_Activity.this, MainActivity.class);
+                Intent intent = new Intent(Splash_Activity.this, TestActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.dalong.carrousellayout.CarrouselLayout
+        android:id="@+id/carrousel"
+        app:rotateDirection="anticlockwise"
+        android:background="@color/colorPrimary"
+        app:r="400dp"
+        app:rotationTime="3000"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/pl3"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:src="@drawable/qlc"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:src="@drawable/fc3d"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:src="@drawable/cqssc"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:src="@drawable/dlt"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:src="@drawable/ssq"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:src="@drawable/hlj22_5"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <ImageView
+            android:src="@drawable/qxc"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+    </com.dalong.carrousellayout.CarrouselLayout>
+</LinearLayout>

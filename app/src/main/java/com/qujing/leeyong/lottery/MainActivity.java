@@ -186,6 +186,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         caipiao.edit().putString("广东11选5 - 高频", "http://f.apiplus.net/gd11x5-10.json").commit();
         caipiao.edit().putString("甘肃11选5 - 高频", "http://f.apiplus.net/gs11x5-10.json").commit();
         caipiao.edit().putString("广西11选5 - 高频", "http://f.apiplus.net/fx11x5-10.json").commit();
+        caipiao.edit().putString("北京快三 - 高频", "http://f.apiplus.net/bjk3-10.json").commit();
+        caipiao.edit().putString("新疆喜乐彩 - 高频", "http://f.apiplus.net/xjxlc-10.json").commit();
+
         SharedPreferences caipiaoIcon = getSharedPreferences("CAIPIAOICON", Context.MODE_PRIVATE);
         SharedPreferences caipiaoName = getSharedPreferences("CAIPIAONAME", Context.MODE_PRIVATE);
         caipiaoIcon.edit().putInt("dlt", R.drawable.dlt).commit();
@@ -197,6 +200,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         caipiaoIcon.edit().putInt("pl5", R.drawable.pl5).commit();
         caipiaoIcon.edit().putInt("qlc", R.drawable.qlc).commit();
         caipiaoIcon.edit().putInt("ssq", R.drawable.ssq).commit();
+        caipiaoIcon.edit().putInt("bjk3", R.drawable.bjk3).commit();
+        caipiaoIcon.edit().putInt("gd11x5", R.drawable.gd11x5).commit();
 
         caipiaoName.edit().putString("dlt", "大乐透").commit();
         caipiaoName.edit().putString("cqssc", "重庆时时彩").commit();
@@ -207,6 +212,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         caipiaoName.edit().putString("pl5","排列5").commit();
         caipiaoName.edit().putString("qlc", "七乐彩").commit();
         caipiaoName.edit().putString("ssq", "双色球").commit();
+        caipiaoName.edit().putString("bjk3", "北京快三").commit();
+        caipiaoName.edit().putString("gd11x5", "广东11选5").commit();
     }
 
 

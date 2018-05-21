@@ -28,6 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.dalong.carrousellayout.CarrouselLayout;
 import com.qujing.leeyong.lottery.HistoryActivity;
 import com.qujing.leeyong.lottery.MapActivity;
 import com.qujing.leeyong.lottery.MobikeActivity;
@@ -162,6 +163,12 @@ public class HomeFragment extends Fragment implements OnBannerListener {
                 startActivity(intent);
             }
         });
+        //mLoopRotarySwitchView.setLoopRotationX(progress - seekBar.getMax() / 2);  180
+        CarrouselLayout carrousel= (CarrouselLayout) inflate.findViewById(R.id.carrousel);
+        carrousel.setRotationX(-15);
+        carrousel.setR(400)//设置R的大小
+                .setAutoRotation(true)//是否自动切换
+                .setAutoRotationTime(1500);//自动切换的时间  单位毫秒
     }
 
     Dialog loadingDialog;

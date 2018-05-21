@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.dalong:carrousellayout-1.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/carrousellayout-1.0.0.aar/33f98a7b844d7045655721cfe117bf80/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/carrousellayout-1.0.0.aar/33f98a7b844d7045655721cfe117bf80/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dalong/carrousellayout/1.0.0/41ef8e07dceac17194077a9fbc305096a5392e88/carrousellayout-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
