@@ -11,7 +11,7 @@
         android:minHeight="?attr/actionBarSize">
         <TextView
             android:textColor="@color/white"
-            android:text="周边地图"
+            android:text="下线彩站"
             android:textSize="22sp"
             android:gravity="center"
             android:id="@+id/title"

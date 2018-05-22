@@ -43,6 +43,40 @@
         android:layout_height="1dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/re_fenxiang"
+        android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/fenxaing"
+            android:layout_width="25dp"
+            android:src="@drawable/share"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_height="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="分\t\t\t享"
+            android:layout_toRightOf="@+id/fenxaing"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/right"
+            android:layout_height="15dp"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:id="@+id/re_fankui"
         android:layout_height="45dp">
         <ImageView

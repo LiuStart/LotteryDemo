@@ -8,7 +8,7 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="180dp" />
-    <LinearLayout
+<!--    <LinearLayout
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -31,30 +31,33 @@
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:layout_height="1dp"/>
+    </LinearLayout>-->
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="线下走势"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorPrimary"
+            android:layout_height="1dp"/>
     </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"
     android:padding="5dp"
+    android:layout_marginTop="10dp"
     android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:id="@+id/yaoyiyao"
-        android:gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="35dp"
-            android:src="@drawable/yaoyiyao"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="35dp"/>
-        <TextView
-            android:text="摇一摇"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-    </LinearLayout>
     <LinearLayout
         android:id="@+id/gomap"
         android:layout_width="0dp"
@@ -66,11 +69,12 @@
             android:src="@drawable/map"
             android:layout_gravity="center_horizontal"
             android:layout_height="35dp"/>
+
         <TextView
-            android:text="我要去彩站"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="线下彩站"/>
 
     </LinearLayout>
     <LinearLayout
@@ -84,15 +88,36 @@
             android:src="@drawable/zoushi"
             android:layout_gravity="center_horizontal"
             android:layout_height="35dp"/>
+
         <TextView
-            android:text="最新走势"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="开奖走势"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:id="@+id/yaoyiyao"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="35dp"
+            android:src="@drawable/yaoyiyao"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="开心选号"/>
 
     </LinearLayout>
 </LinearLayout>
-    <LinearLayout
+  <!--  <LinearLayout
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -106,7 +131,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="开奖信息"
+            android:text="选择开奖信息"
             android:gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"/>
@@ -115,8 +140,28 @@
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:layout_height="1dp"/>
-    </LinearLayout>
+    </LinearLayout>-->
     <!--开奖listview-->
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="今日新开"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/colorPrimary"
+            android:layout_height="1dp"/>
+    </LinearLayout>
     <ListView
         android:id="@+id/listview"
         android:visibility="gone"
@@ -134,35 +179,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
+            android:id="@+id/pl3"
             android:src="@drawable/pl3"
             android:layout_width="80dp"
             android:layout_height="80dp" />
         <ImageView
+            android:id="@+id/qlc"
             android:src="@drawable/qlc"
             android:layout_width="80dp"
             android:layout_height="80dp" />
         <ImageView
+            android:id="@+id/fc3d"
             android:src="@drawable/fc3d"
             android:layout_width="80dp"
             android:layout_height="80dp" />
         <ImageView
+            android:id="@+id/cqssc"
             android:src="@drawable/cqssc"
             android:layout_width="80dp"
             android:layout_height="80dp" />
         <ImageView
+            android:id="@+id/dlt"
             android:src="@drawable/dlt"
             android:layout_width="80dp"
             android:layout_height="80dp" />
         <ImageView
+            android:id="@+id/ssq"
             android:src="@drawable/ssq"
             android:layout_width="80dp"
             android:layout_height="80dp" />
         <ImageView
-            android:src="@drawable/hlj22_5"
+            android:id="@+id/qxc"
+            android:src="@drawable/qxc"
             android:layout_width="80dp"
             android:layout_height="80dp" />
         <ImageView
-            android:src="@drawable/qxc"
+            android:id="@+id/zcjqc"
+            android:src="@drawable/zcjqc"
             android:layout_width="80dp"
             android:layout_height="80dp" />
     </com.dalong.carrousellayout.CarrouselLayout>
@@ -189,7 +242,6 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/cqssc"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/cqssc"/>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.qujing.leeyong.lottery">
+          package="com.qujing.leeyong.xlchwsc">
     <permission
-        android:name="com.qujing.leeyong.lottery.permission.JPUSH_MESSAGE"
+        android:name="com.qujing.leeyong.xlchwsc.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature"/>
-    <uses-permission android:name="com.qujing.leeyong.lottery.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="com.qujing.leeyong.xlchwsc.permission.JPUSH_MESSAGE"/>
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -51,9 +51,9 @@
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="T2ZERIM4V3rClZtnD007lwbChgyvNCNG" />
+            android:value="ZtAuH1O0v8Kc03ZD2rp2fxERmREGKU0M" />
         <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
-        <meta-data android:name="JPUSH_APPKEY" android:value="3ad913725872c380063b4d0d" /> <!--  </>值来自开发者平台取得的AppKey-->
+        <meta-data android:name="JPUSH_APPKEY" android:value="c18f961032570805c6c7e45b" /> <!--  </>值来自开发者平台取得的AppKey-->
 
         <meta-data android:name="MANA_APPKEY"
                    android:value="NEWSSDK-418992"></meta-data>
@@ -72,7 +72,7 @@
         <activity android:name="com.stonesun.adagent.activitys.ContentAdActivity" />
         <activity android:name="com.stonesun.newssdk.permission.PermissionActivity" />
         <activity
-            android:name="com.qujing.leeyong.lottery.MainActivity"
+            android:name="com.qujing.leeyong.xlchwsc.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="jpush.testAction" />
@@ -95,36 +95,36 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
-        <activity android:name="com.qujing.leeyong.lottery.LoginActivity"
+        <activity android:name="com.qujing.leeyong.xlchwsc.LoginActivity"
                   android:label="@string/lable_login"
                   android:theme="@style/AppTheme"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.WaveSwipeStyleActivity"
+        <activity android:name="com.qujing.leeyong.xlchwsc.WaveSwipeStyleActivity"
                   android:theme="@style/AppTheme"
                   android:screenOrientation="portrait"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.MobikeActivity"
+        <activity android:name="com.qujing.leeyong.xlchwsc.MobikeActivity"
                   android:label="@string/lable_mobike"
                   android:theme="@style/AppTheme"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.WebViewActivity"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.UserInfoActivity"
+        <activity android:name="com.qujing.leeyong.xlchwsc.WebViewActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.UserInfoActivity"
                   android:label="@string/user_info"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.Splash_Activity"
+        <activity android:name="com.qujing.leeyong.xlchwsc.Splash_Activity"
                   android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.qujing.leeyong.lottery.MapActivity"
+        <activity android:name="com.qujing.leeyong.xlchwsc.MapActivity"
                   android:label="@string/lable_map"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.ZoushiActivty"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.ShuoMingActivity"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.FanKuiActivity"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.MyWebActivity"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.WeatherActivity"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.SsqActivity"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.NewsEveryDay"></activity>
-        <activity android:name="com.qujing.leeyong.lottery.HistoryActivity"></activity>
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.ZoushiActivty"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.ShuoMingActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.FanKuiActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.MyWebActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.WeatherActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.SsqActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.NewsEveryDay"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.HistoryActivity"></activity>
+        <activity android:name="com.qujing.leeyong.xlchwsc.TestActivity"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->
@@ -161,7 +161,7 @@
 
         <!-- since 3.1.0 Required SDK 核心功能-->
         <provider
-            android:authorities="com.qujing.leeyong.lottery.DownloadProvider"
+            android:authorities="com.qujing.leeyong.xlchwsc.DownloadProvider"
             android:name="cn.jpush.android.service.DownloadProvider"
             android:exported="true"
             />
@@ -192,21 +192,21 @@
 
         <!-- since 3.0.9 Required SDK 核心功能-->
         <provider
-            android:authorities="com.qujing.leeyong.lottery.DataProvider"
+            android:authorities="com.qujing.leeyong.xlchwsc.DataProvider"
             android:name="cn.jpush.android.service.DataProvider"
             android:exported="false"
             />
 
 
         <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调-->
-        <receiver android:name="com.qujing.leeyong.lottery.util.MyJPushMessageReceiver">
+        <receiver android:name="com.qujing.leeyong.xlchwsc.util.MyJPushMessageReceiver">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
                 <category android:name="com.qujing.leeyong"></category>
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.qujing.leeyong.lottery.util.MyReceiver"
+            android:name="com.qujing.leeyong.xlchwsc.util.MyReceiver"
             android:exported="false"
             android:enabled="true">
             <intent-filter>

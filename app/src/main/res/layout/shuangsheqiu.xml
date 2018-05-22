@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="双色球最新开奖信息"
+            android:text="大乐透最新开奖信息"
             android:textColor="@color/white"
             android:textSize="18sp"/>
     </LinearLayout>
@@ -55,14 +55,14 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/ssq"/>
+                    android:src="@drawable/dlt"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:text="双色球 第 18054 期"/>
+                    android:text="大乐透 第 18058 期"/>
 
 
             </LinearLayout>
@@ -84,66 +84,72 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shapetextview"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/white"
+                    android:background="@drawable/shapetextview"
                     android:padding="5dp"
-                    android:text="04"/>
+                    android:text="09"
+                    android:textColor="@color/white"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shapetextview"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/white"
+                    android:background="@drawable/shapetextview"
                     android:padding="5dp"
-                    android:text="06"/>
+                    android:text="11"
+                    android:textColor="@color/white"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shapetextview"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/white"
+                    android:background="@drawable/shapetextview"
                     android:padding="5dp"
-                    android:text="18"/>
+                    android:text="12"
+                    android:textColor="@color/white"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shapetextview"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/white"
+                    android:background="@drawable/shapetextview"
                     android:padding="5dp"
-                    android:text="22"/>
+                    android:text="26"
+                    android:textColor="@color/white"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shapetextview"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/white"
+                    android:background="@drawable/shapetextview"
                     android:padding="5dp"
-                    android:text="25"/>
+                    android:text="32"
+                    android:textColor="@color/white"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shapetextview"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/white"
-                    android:padding="5dp"
-                    android:text="33"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:background="@drawable/shapetextview_blue"
+                    android:padding="5dp"
+                    android:text="04"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/white"
+                    android:background="@drawable/shapetextview_blue"
                     android:padding="5dp"
-                    android:text="16"/>
+                    android:text="10"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <LinearLayout
@@ -166,12 +172,13 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:text="本期销量：364,343,470元    奖池滚存：1,075,158,284元 "/>
+                    android:text="本期销量：239072621元    奖池滚存：5563764270.56元 "/>
 
 
             </LinearLayout>
@@ -217,7 +224,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="4"/>
+                    android:text="1"/>
 
                 <TextView
                     android:layout_width="1dp"
@@ -244,14 +251,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="86"/>
+                    android:text="117"/>
 
                 <TextView
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="305,357"/>
+                    android:text="68635"/>
             </LinearLayout>
 
             <LinearLayout
@@ -272,14 +279,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="970"/>
+                    android:text="1189"/>
 
                 <TextView
                     android:layout_width="1dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="3,000"/>
+                    android:text="2778"/>
             </LinearLayout>
 
             <LinearLayout
@@ -300,7 +307,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="55282"/>
+                    android:text="45483"/>
 
                 <TextView
                     android:layout_width="1dp"
@@ -329,7 +336,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="1101728"/>
+                    android:text="791788"/>
 
                 <TextView
                     android:layout_width="1dp"
@@ -357,7 +364,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="9700312"/>
+                    android:text="6674263"/>
 
                 <TextView
                     android:layout_width="1dp"

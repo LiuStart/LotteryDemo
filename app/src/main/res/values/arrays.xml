@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="caipiao">
-        <item>福彩3d</item>
         <item>双色球</item>
         <item>超级大乐透</item>
         <item>排列3</item>
         <item>排列5</item>
         <item>七乐彩</item>
         <item>七星彩</item>
+        <item>福彩3d</item>
     </string-array>
     <array name="url">
-        <item>http://218.206.176.184:8080/mos/js/weather.jpg</item>
+        <!--<item>http://218.206.176.184:8080/mos/js/weather.jpg</item>
         <item>http://218.206.176.184:8080/mos/js/ssqkj.jpg</item>
         <item>http://218.206.176.184:8080/mos/js/redian.jpg</item>
-        <item>http://218.206.176.184:8080/mos/js/nba.jpg</item>
+        <item>http://218.206.176.184:8080/mos/js/nba.jpg</item>-->
+        <item>assets:/weather.jpg</item>
+        <item>assets:/ssqkj.jpg</item>
+        <item>assets:/redian.jpg</item>
+        <item>assets:/nba.jpg</item>
     </array>
     <array name="title">
-        <item>今日天气趋势。</item>
-        <item>双色球开奖啦！</item>
-        <item>聚焦民生热点。</item>
-        <item>NBA季后赛。</item>
+        <item>关注民生热点。</item>
+        <item>大乐透开奖啦！</item>
+        <item>天气趋势。</item>
+        <item>聚焦NBA季后赛。</item>
     </array>
 </resources>
