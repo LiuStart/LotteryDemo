@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="210dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/contacts_rg"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/zoushi"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/order_tab_selector_left"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="走势"
+                    android:textColor="@drawable/order_text_selector"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/wanfa"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/order_tab_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="玩法"
+                    android:textColor="@drawable/order_text_selector"
+                    android:textSize="14dp" />
+            </RadioGroup>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

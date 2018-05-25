@@ -37,7 +37,7 @@ public class Splash_Activity extends Activity {
                 startActivity(intent);
                 finish();
             }else if(msg.what == 2){
-                Intent intent = new Intent(Splash_Activity.this, MainActivity.class);
+                Intent intent = new Intent(Splash_Activity.this, OtherActivity.class);
                 startActivity(intent);
                 finish();
             }

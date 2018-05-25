@@ -125,6 +125,7 @@
         <activity android:name="com.qujing.leeyong.xlchwsc.NewsEveryDay"></activity>
         <activity android:name="com.qujing.leeyong.xlchwsc.HistoryActivity"></activity>
         <activity android:name="com.qujing.leeyong.xlchwsc.TestActivity"></activity>
+        <activity android:name=".OtherActivity"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->

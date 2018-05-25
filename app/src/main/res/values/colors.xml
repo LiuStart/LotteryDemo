@@ -9,6 +9,8 @@
     <color name="sports">#FB500F</color>
     <color name="title">#F2F2F2</color>
     <color name="flux">#51B9D6</color>
+    <color name="bbbbbb">#bbbbbb</color>
+    <color name="appredcolor">#fc2c4b</color>
     <color name="transparent">#00000000</color>
     <color name="ivory">#fffff0</color><!--象牙色 -->
     <color name="lightyellow">#ffffe0</color><!--亮黄色 -->
@@ -172,4 +174,264 @@
     <color name="selected_btn_bg">#0C6609</color>
     <color name="user">#EEEBEB</color>
     <color name="bg_bottom">#fefefe</color>
+    <color name="crash_tool_bar_color">#333333</color>
+    <color name="crash_white">#FFFFFF</color>
+    <color name="crash_background_color">#ececec</color>
+    <color name="crash_black_text_color_01">#545454</color>
+    <color name="crash_black_text_color_02">#8c8c8c</color>
+    <color name="crash_line_color">#DFDFDF</color>
+    <color name="timetimepicker_default_text_color">#999999</color>
+    <color name="timepicker_toolbar_bg">#e60012</color>
+    <color name="timepicker_dialog_bg">#80000000</color>
+    <color name="timepicker_line">#e8e8e8</color>
+
+    <color name="font_white_one">#FFFFFF</color>
+
+    <color name="gray_normal">#666667</color>
+    <color name="light_red">#ffeeee</color>
+    <color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
+    <color name="left_list">#F4F4F5</color>
+    <color name="consumer_bg">#f3f3f3</color>
+    <color name="appcolor">#2ecb19</color>
+    <color name="homepager_top_color">#1cb878</color>
+    <color name="apptrancolor">#60fc2c4b</color>
+    <color name="f1f1f1">#f1f1f1</color>
+    <color name="light_redcolor">#ff6464</color>
+    <color name="titlepersscolor">#FFD700</color>
+    <color name="grabcolor">#F9EF00</color>
+    <color name="orange_900">#F9EF00</color>
+    <color name="stepviewcolor">#f4ce73</color>
+    <color name="app_black_text">#656565</color>
+    <color name="alpwhite">#30ffffff</color>
+    <color name="hblack">#3c3f41</color>
+    <color name="mblack">#7f7f7f</color>
+    <color name="rippelColor">#FFFFFF</color>
+    <color name="diliver_line">#e1e1e1</color>
+    <color name="hint_color">#c3c3c3</color>
+    <color name="sblack">#b5b5b5</color>
+    <color name="LightGray">#E7E7E7</color>
+    <color name="grayef">#efefef</color>
+    <color name="f5f5f5f">#5f5f5f</color>
+    <color name="acacac">#acacac</color>
+    <color name="user_center_divide_line">#dcdcdc</color>
+    <color name="user_center_black_text">#313131</color>
+    <color name="shopping_cart_bg">#DC5914</color>
+    <color name="home_direction">#2ecb19</color>
+    <color name="home_canteen">#3d7bec</color>
+    <color name="home_line">#fbfbfb</color>
+    <color name="sou_apply_color">#a4a4a4</color>
+    <color name="sou_text_color">#333333</color>
+    <!--对话框-->
+    <color name="color_dialog_gray">#ededf3</color>
+    <color name="color_dialog_content">#ed7861</color>
+    <color name="color_dialog_title">#303030</color>
+    <color name="color_dialog_content_prompt">#343434</color>
+    <color name="color_type_info">#79b3e4</color>
+    <color name="color_type_help">#e8bd4b</color>
+    <color name="color_type_wrong">#ed7861</color>
+    <color name="color_type_warning">#e8bd4b</color>
+    <color name="color_type_success">#90b06e</color>
+    <color name="background_color">#F4F4F4</color>
+    <color name="homepage_title_bgcolor">#00000000</color>
+    <color name="titlepresss">#F4F4F4</color>
+    <color name="bg_page">#ffebebeb</color>
+    <color name="mainxian">#dadada</color>
+    <color name="refresh_blue">#6e97f5</color>
+    <color name="topic_text_blue">#526ba0</color>
+    <color name="topic_frem_gray">#b5b5b5</color>
+    <color name="topic_back_gray">#f5f5f5</color>
+    <color name="lightred">#FA6B6B</color>
+    <color name="line">#cfcccc</color>
+    <color name="graycf">#cfcfcf</color>
+    <color name="grayfc">#fcfcfc</color>
+    <color name="light_gray_leftmenu_deep">#333333</color>
+    <color name="transparent15">#05000000</color>
+    <color name="transparent10">#00000000</color>
+    <color name="colorRed">#fe5100</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="color_app_text">#666666</color>
+    <color name="color_app_button_bg">#f2f2f2</color>
+    <color name="e3e3e3">#3e3e3e</color>
+    <color name="tan90">#90000000</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="colorHeaderBg">#ffc001</color>
+    <color name="redf7">#ff7f7f</color>
+    <color name="colorFontDef">#333333</color>
+    <color name="colorSearchBackground">#ffffff</color>
+    <color name="colorHomeNavBg">#999999</color>
+    <color name="colorCategoryList">#d8dae9</color>
+    <color name="colorHomeNav">#ffffff</color>
+    <color name="colorHomeTabBtnBg">#ffffff</color>
+    <color name="colorHomeCategoriesBg">#eeeeee</color>
+    <color name="colorPersonalBackground">#ececec</color>
+    <color name="colorClassifyListView">#b8b8b8</color>
+    <color name="colorGoodDetailBackground">#d5d5d5</color>
+    <color name="colorBackground">#f5f5f5</color>
+    <color name="colorGrayLine">#d8dae9</color>
+    <color name="colorYellow">#b18907</color>
+    <color name="rc_main_theme">#0195ff</color>
+    <color name="color_f3f4f5">#f3f4f5</color>
+    <color name="search_bg_gray">#f2f2f2</color>
+    <color name="color_divide_line">#c3c3c3</color>
+    <color name="colorBlueGreen">#009999</color>
+    <color name="colorSearch">#1dffffff</color>
+    <color name="black68">#686868</color>
+
+    <color name="bluee9">#00a9e9</color>
+    <!--转轮颜色-->
+    <color name="wheelitem1">#d4b0fc</color>
+    <color name="wheelitem2">#fec429</color>
+    <color name="wheelitem3">#bbd696</color>
+    <color name="wheelitem4">#b1dcfc</color>
+    <color name="wheelitem5">#b1b6fc</color>
+    <color name="wheelitem6">#fcb1b3</color>
+    <color name="wheelitem7">#fcb1e6</color>
+    <color name="wheelitem8">#fcdab1</color>
+    <color name="colorbackground">#fef3e5</color>
+    <color name="yellow01">#fece00</color>
+    <color name="gray_d3">#d3d3d3</color>
+    <color name="green_2a">#2aa1f4</color>
+    <color name="black_account">#2f2f2f</color>
+    <color name="green_account">#56b263</color>
+    <color name="division_account">#E1E1E1</color>
+    <color name="contact_background">#EEF6F6</color>
+    <color name="tab_select_textcorlor">#636363</color>
+    <color name="sale_room_send_text">#B3B3B3</color>
+    <!--首页模块的color-->
+    <color name="xnmscolor">#f5413d</color>
+    <color name="sssccolor">#ff970f</color>
+    <color name="qjcolor">#1d92e3</color>
+    <color name="zbcycolor">#8952f9</color>
+    <color name="cshgcolor">#8abb22</color>
+    <color name="swzlcolor">#26d3ec</color>
+    <color name="wdkqcolor">#ffba00</color>
+    <color name="xykcolor">#06c1ae</color>
+    <!--发现模块的color-->
+    <color name="query">#8abb22</color>
+    <color name="course">#ffba00</color>
+    <color name="activity">#1ebff3</color>
+    <color name="market">#f85266</color>
+    <color name="lecture">#24cdc0</color>
+    <color name="repair">#45d2ff</color>
+    <color name="week_view_text_date">#abadae</color>
+    <color name="class_title_text_color">#f56d81</color>
+    <color name="curriculum_text_color">#fc2c4b</color>
+    <color name="checkworkattendance_item_bg_color">#f7c9cb</color>
+    <color name="checkworkattendance_item_bg_color03">#f8ddb6</color>
+    <!--考勤模块的color-->
+    <color name="item_bg">#F7C9CB</color>
+    <color name="color_7a8f">#ff7a8f</color>
+    <!--全局的color-->
+    <color name="titlebar_color">#333333</color>
+    <color name="timeandaddress_color">#666666</color>
+    <color name="tab_underline_color">#f2f2f2</color>
+    <color name="btn_yellow">#facd89</color>
+
+
+    <!--活动的color-->
+    <color name="activity_one_color">#109AEF</color>
+    <color name="activity_two_color">#B257FF</color>
+    <color name="activity_three_color">#E68100</color>
+    <color name="activity_four_color">#00A6DF</color>
+    <color name="activity_bg_color">#2ED1F2</color>
+    <color name="e6e6e6e">#6e6e6e</color>
+    <color name="code_bg_color">#24A6EA</color>
+    <color name="code_item_bg_color">#00A0e9</color>
+
+    <!--圈子的color-->
+    <color name="code_blue_color">#0193E6</color>
+    <color name="code_green_color">#00A762</color>
+    <color name="code_purple_color">#764BA5</color>
+    <color name="code_red_color">#E44740</color>
+    <color name="code_black_color">#303030</color>
+    <color name="code_diliver_color">#dddddd</color>
+    <color name="gray_text_color">#888888</color>
+
+
+    <!--商家标签color-->
+    <color name="merchant_tag_color01">#FEC617</color>
+    <color name="merchant_tag_color02">#99E06C</color>
+    <color name="merchant_tag_color05">#FF4081</color>
+    <color name="merchant_tag_color03">#9598F4</color>
+    <color name="merchant_tag_color04">#303F9F</color>
+    <color name="hint_text_color">#cdcdcd</color>
+
+
+    <!--表情color-->
+    <color name="reply_button_disable">#f5f5f5</color>
+    <color name="reply_button_text">#dfFFFFFF</color>
+    <color name="reply_button_text_disable">#b8b8b8</color>
+    <color name="text_primary">#df000000</color>
+
+    <color name="bg_edittext_color">#00000000</color>
+
+    <color name="bg_horizontal_line_color">#80a3a4a7</color>
+    <color name="bg_horizontal_btn_normal">#eeeeee</color>
+    <color name="bg_horizontal_btn_selected">#70a3a4a7</color>
+
+
+    <color name="uncompleted_color">#A3E0D9</color>
+    <color name="uncompleted_text_color">#F8F8F8</color>
+
+    <color name="bg_indicator_point_normal">#D8D8D8</color>
+    <color name="bg_indicator_point_selected">#A6A6A6</color>
+    <color name="circle_food_coupon">#FD586F</color>
+    <color name="food_coupon">#BABABA</color>
+    <color name="D4_color">#D4D4D4</color>
+    <color name="B4_color">#B4B4B4</color>
+    <color name="color_30">#303030</color>
+    <color name="color_AD">#ADADAD</color>
+    <color name="color_99">#999999</color>
+    <color name="color_90">#909090</color>
+    <color name="color_CD">#CDCDCD</color>
+    <color name="color_3E">#3E3E3E</color>
+    <color name="color_88">#888888</color>
+    <color name="color_66">#666666</color>
+    <color name="color_33">#333333</color>
+    <color name="color_bb">#bbbbbb</color>
+    <color name="color_B3">#B3B3B3</color>
+    <color name="color_F7">#F7F7F7</color>
+    <color name="color_FA">#FAFAFA</color>
+    <color name="color_AC">#ACACAC</color>
+    <color name="color_F1">#F1F1F1</color>
+    <color name="color_F0">#F0F0F0</color>
+    <color name="color_DB">#DBDBDB</color>
+    <color name="color_F4">#F4F4F4</color>
+    <color name="color_E9">#E9E9E9</color>
+    <color name="color_E5">#E5E5E5</color>
+    <color name="color_D3">#D3D3D3</color>
+    <color name="color_F5">#F5F5F5</color>
+    <color name="color_AA">#AAAAAA</color>
+    <color name="color_AB">#ABABAB</color>
+    <color name="color_FFD8">#FFD8D8</color>
+    <color name="color_80">#808080</color>
+    <color name="color_2D">#2D2D2D</color>
+    <color name="color_6C">#6c6c6c</color>
+    <color name="color_55">#555555</color>
+    <color name="color_DD">#DDDDDD</color>
+    <color name="color_E2">#E2E2E2</color>
+    <color name="lostfound_tv">#FD2433</color>
+    <!--double-->
+    <color name="color_double_one">#ffa8b5</color>
+    <color name="color_double_two">#ff7f91</color>
+    <color name="color_double_three">#ff4460</color>
+    <color name="color_double_four">#fc2d4c</color>
+
+
+
+    <!--saleroommate_itembg-->
+    <color name="saleroommate_itembg_01">#6dd1fd</color>
+    <color name="saleroommate_itembg_02">#fabc7a</color>
+    <color name="saleroommate_itembg_03">#ffd79a</color>
+    <color name="saleroommate_itembg_04">#ee464e</color>
+    <color name="saleroommate_itembg_05">#e0cab2</color>
+    <color name="saleroommate_itembg_06">#fe5d5d</color>
+    <color name="saleroommate_itembg_07">#f26059</color>
+    <color name="saleroommate_itembg_08">#62c2a4</color>
+    <color name="saleroommate_itembg_09">#f2dbbb</color>
+    <color name="saleroommate_itembg_10">#1ea093</color>
+    <color name="saleroommate_itembg_11">#dfcaac</color>
+    <color name="saleroommate_itembg_12">#f14450</color>
 </resources>

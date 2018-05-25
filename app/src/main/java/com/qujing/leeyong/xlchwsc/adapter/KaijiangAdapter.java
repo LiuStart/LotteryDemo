@@ -109,6 +109,9 @@ public class KaijiangAdapter extends BaseAdapter{
             textview.setText(num);
             textview.setHeight((int)(25 * scale + 0.5f));
             textview.setWidth((int)(25 * scale + 0.5f));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0, 0, 10, 0);
+            textview.setLayoutParams(layoutParams);
             myHoder.group.addView(textview);
         }
         return convertView;

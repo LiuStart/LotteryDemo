@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.qujing.leeyong.xlchwsc.view.NoScrollViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="210dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/contacts_rg"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/contacts_rb1"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/order_tab_selector_left"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="排行榜"
+                    android:textColor="@drawable/order_text_selector"
+                    android:textSize="14dp" />
+
+
+                <RadioButton
+                    android:id="@+id/contacts_rb2"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/order_mid_tab_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="赛程"
+                    android:textColor="@drawable/order_text_selector"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/contacts_rb3"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/order_tab_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="数据"
+                    android:textColor="@drawable/order_text_selector"
+                    android:textSize="14dp" />
+            </RadioGroup>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
