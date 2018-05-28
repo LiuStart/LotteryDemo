@@ -126,6 +126,7 @@
         <activity android:name="com.qujing.leeyong.xlchwsc.HistoryActivity"></activity>
         <activity android:name="com.qujing.leeyong.xlchwsc.TestActivity"></activity>
         <activity android:name=".OtherActivity"></activity>
+        <activity android:name=".XuanHaoActivity"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->

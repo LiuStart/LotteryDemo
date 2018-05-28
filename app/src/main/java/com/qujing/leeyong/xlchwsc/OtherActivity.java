@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
-import com.qujing.leeyong.xlchwsc.fragment.TypeFragment;
+import com.qujing.leeyong.xlchwsc.fragment.MyFragment;
 
 import java.util.ArrayList;
 
@@ -19,8 +19,8 @@ import java.util.ArrayList;
 
 public class OtherActivity extends AppCompatActivity {
     private ArrayList<Fragment> mFragments2 = new ArrayList<>();
-    private String[] mTitles = {"英超", "西甲", "德甲", "法甲", "意甲", "中超","欧冠","亚冠"};
-  //  private String[] mTitles = {"排列三", "排列五", "新时时彩", "快三", "快乐十分", "十一选五"};
+   // private String[] mTitles = {"英超", "西甲", "德甲", "法甲", "意甲", "中超","欧冠","亚冠"};
+    private String[] mTitles = {"排列三", "排列五", "新时时彩", "快三", "快乐十分", "十一选五"};
     SlidingTabLayout tabLayout_3;
 
 
@@ -38,7 +38,7 @@ public class OtherActivity extends AppCompatActivity {
 
         for (int i = 0; i < mTitles.length; i++) {
 
-            TypeFragment fg3 = new TypeFragment();
+            MyFragment fg3 = new MyFragment();
             Bundle bundle1 = new Bundle();
             bundle1.putInt("index", i);
           //  bundle1.putString("title", i+"");

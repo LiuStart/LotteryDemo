@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
           android:id="@+id/tv_lottery_number"
-          android:textColor="@color/white"
+          android:textColor="@color/black"
           android:textStyle="bold"
           android:layout_marginRight="5dp"
-          android:background="@drawable/shapetextview"
+          android:background="@drawable/shape_xuanhao"
           android:layout_width="25dp"
+
           android:text="2"
           android:gravity="center"
           android:layout_gravity="center_horizontal"

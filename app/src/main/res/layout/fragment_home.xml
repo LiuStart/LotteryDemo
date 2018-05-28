@@ -164,13 +164,12 @@
     </LinearLayout>
     <ListView
         android:id="@+id/listview"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></ListView>
     <!--旋转木马-->
     <com.dalong.carrousellayout.CarrouselLayout
         android:id="@+id/carrousel"
-        android:visibility="gone"
         app:rotateDirection="anticlockwise"
         app:r="400dp"
         app:rotationTime="3000"

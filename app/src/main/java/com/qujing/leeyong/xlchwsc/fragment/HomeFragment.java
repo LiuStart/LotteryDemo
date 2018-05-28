@@ -33,12 +33,12 @@ import com.dalong.carrousellayout.CarrouselLayout;
 import com.dalong.carrousellayout.OnCarrouselItemClickListener;
 import com.qujing.leeyong.xlchwsc.HistoryActivity;
 import com.qujing.leeyong.xlchwsc.MapActivity;
-import com.qujing.leeyong.xlchwsc.MobikeActivity;
 import com.qujing.leeyong.xlchwsc.NewsEveryDay;
+import com.qujing.leeyong.xlchwsc.OtherActivity;
 import com.qujing.leeyong.xlchwsc.R;
 import com.qujing.leeyong.xlchwsc.SsqActivity;
 import com.qujing.leeyong.xlchwsc.WeatherActivity;
-import com.qujing.leeyong.xlchwsc.ZoushiActivty;
+import com.qujing.leeyong.xlchwsc.XuanHaoActivity;
 import com.qujing.leeyong.xlchwsc.adapter.KaijiangAdapter;
 import com.qujing.leeyong.xlchwsc.bean.KaiJiangInfo;
 import com.qujing.leeyong.xlchwsc.util.CheckUtil;
@@ -131,7 +131,7 @@ public class HomeFragment extends Fragment implements OnBannerListener, View.OnC
         yaoyiyao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MobikeActivity.class);
+                Intent intent = new Intent(getContext(), XuanHaoActivity.class);
                 startActivity(intent);
             }
         });
@@ -147,7 +147,7 @@ public class HomeFragment extends Fragment implements OnBannerListener, View.OnC
         zoushi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ZoushiActivty.class);
+                Intent intent = new Intent(getContext(), OtherActivity.class);
                 startActivity(intent);
             }
         });

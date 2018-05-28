@@ -15,13 +15,19 @@ import java.util.ArrayList;
  * Created by Administrator on 2018/5/23.
  */
 
-public class GridAdapter extends BaseAdapter{
+public class GridAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<String> list;
-    public GridAdapter(Context context, ArrayList<String> list){
-        this.mContext=context;
-        this.list=list;
+    private ArrayList<String> contentList;
+    private int type;
+
+    public GridAdapter(Context context, ArrayList<String> list, ArrayList<String> cList, int type) {
+        this.mContext = context;
+        this.list = list;
+        this.contentList = cList;
+        this.type = type;
     }
+
     @Override
     public int getCount() {
         return list.size();
@@ -39,22 +45,48 @@ public class GridAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        //  MyLogger.Log("getView::" + contentList.size());
+        // MyLogger.Log("position::" + position+"");
         MyHolder holder;
-        if (convertView==null){
-            holder=new MyHolder();
-            convertView= LayoutInflater.from(mContext).inflate(R.layout.item_xuanhao,null);
-            holder.textView=convertView.findViewById(R.id.tv_lottery_number);
-            holder.textView.setBackground(mContext.getResources().getDrawable(R.drawable.shape_xuanhao));
-            holder.textView.setTextColor(mContext.getResources().getColor(R.color.black));
+        if (convertView == null) {
+            holder = new MyHolder();
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_xuanhao, null);
+            holder.textView = convertView.findViewById(R.id.tv_lottery_number);
             convertView.setTag(holder);
         } else {
-            holder= (MyHolder) convertView.getTag();
+            holder = (MyHolder) convertView.getTag();
         }
+        if (type == 0) {
+            if (contentList != null && contentList.contains(position + "")) {
+                //  MyLogger.Log("contentList::" + position);
+
+                holder.textView.setBackground(mContext.getResources().getDrawable(R.drawable.shapetextview));
+                holder.textView.setTextColor(mContext.getResources().getColor(R.color.white));
+                holder.textView.setTag(1);
+            } else {
+                holder.textView.setBackground(mContext.getResources().getDrawable(R.drawable.shape_xuanhao));
+                holder.textView.setTextColor(mContext.getResources().getColor(R.color.black));
+                holder.textView.setTag(0);
+            }
+        } else {
+            if (contentList != null && contentList.contains(position + "")) {
+                //  MyLogger.Log("contentList::" + position);
+
+                holder.textView.setBackground(mContext.getResources().getDrawable(R.drawable.shapetextview_h));
+                holder.textView.setTextColor(mContext.getResources().getColor(R.color.white));
+                holder.textView.setTag(1);
+            } else {
+                holder.textView.setBackground(mContext.getResources().getDrawable(R.drawable.shape_xuanhao_h));
+                holder.textView.setTextColor(mContext.getResources().getColor(R.color.black));
+                holder.textView.setTag(0);
+            }
+        }
+
         holder.textView.setText(list.get(position));
         return convertView;
     }
 
-    class MyHolder{
+    class MyHolder {
         TextView textView;
     }
 }
