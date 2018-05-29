@@ -13,7 +13,7 @@
         android:minHeight="?attr/actionBarSize">
         <TextView
             android:textColor="@color/white"
-            android:text="首页开彩"
+            android:text="最新开奖"
             android:textSize="22sp"
             android:gravity="center"
             android:id="@+id/title"

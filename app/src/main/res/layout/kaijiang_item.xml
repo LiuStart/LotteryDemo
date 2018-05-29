@@ -12,15 +12,15 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_height="wrap_content"/>
-    <TextView
+    <LinearLayout
         android:id="@+id/code"
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:textColor="@color/red"
-        android:textSize="18sp"
-        android:text="20 12 03 45 06 74 89 "
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
     <ImageView
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
