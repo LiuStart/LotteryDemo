@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.qujing.leeyong.klctsz"
+        applicationId "com.qujing.leeyong.klchwsc"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
@@ -61,4 +61,5 @@ dependencies {
     compile 'com.dalong:carrousellayout:1.0.0'
     compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar'
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:1.5.0@aar'
+    compile 'com.yayandroid:Rotatable:1.1.2'
 }

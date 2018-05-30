@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -34,6 +34,7 @@
     </LinearLayout>-->
     <LinearLayout
         android:layout_margin="10dp"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center_vertical"
@@ -55,6 +56,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:padding="5dp"
+    android:layout_alignParentBottom="true"
     android:layout_marginTop="10dp"
     android:layout_height="wrap_content">
 
@@ -146,19 +148,25 @@
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:layout_below="@+id/banner"
         android:gravity="center_vertical"
+        android:id="@+id/xinkai"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_height="1dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:text="今日新开"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="热门彩种"
             android:gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:background="@color/colorPrimary"
             android:layout_height="1dp"/>
     </LinearLayout>
@@ -173,6 +181,7 @@
         app:rotateDirection="anticlockwise"
         app:r="400dp"
         app:rotationTime="3000"
+        android:visibility="gone"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -222,7 +231,8 @@
 <ScrollView
     android:layout_width="match_parent"
     android:scrollbars="none"
-    android:visibility="gone"
+    android:visibility="visible"
+    android:layout_below="@+id/xinkai"
     android:layout_marginTop="10dp"
     android:layout_height="wrap_content">
     <LinearLayout
@@ -235,6 +245,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/first"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -255,6 +266,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:id="@+id/second"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
@@ -271,6 +283,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:id="@+id/third"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
@@ -294,6 +307,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:id="@+id/fourth"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
@@ -311,6 +325,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:orientation="vertical"
+                android:id="@+id/fifth"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <ImageView
@@ -326,6 +341,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:id="@+id/sixth"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
@@ -349,6 +365,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:id="@+id/seventh"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
@@ -365,6 +382,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:id="@+id/eighth"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
@@ -381,6 +399,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:id="@+id/ninth"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
@@ -398,4 +417,4 @@
 
     </LinearLayout>
 </ScrollView>
-</LinearLayout>
+</RelativeLayout>

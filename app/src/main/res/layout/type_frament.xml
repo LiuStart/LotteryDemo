@@ -5,7 +5,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.qujing.leeyong.klctsz.view.NoScrollViewPager
+    <com.qujing.leeyong.klchwsc.view.NoScrollViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

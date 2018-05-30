@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.qujing.leeyong.klctsz">
+          package="com.qujing.leeyong.klchwsc">
     <permission
-        android:name="com.qujing.leeyong.klctsz.permission.JPUSH_MESSAGE"
+        android:name="com.qujing.leeyong.klchwsc.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature"/>
-    <uses-permission android:name="com.qujing.leeyong.klctsz.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="com.qujing.leeyong.klchwsc.permission.JPUSH_MESSAGE"/>
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -72,7 +72,7 @@
         <activity android:name="com.stonesun.adagent.activitys.ContentAdActivity" />
         <activity android:name="com.stonesun.newssdk.permission.PermissionActivity" />
         <activity
-            android:name="com.qujing.leeyong.klctsz.MainActivity"
+            android:name="com.qujing.leeyong.klchwsc.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="jpush.testAction" />
@@ -95,38 +95,38 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
-        <activity android:name="com.qujing.leeyong.klctsz.LoginActivity"
+        <activity android:name="com.qujing.leeyong.klchwsc.LoginActivity"
                   android:label="@string/lable_login"
                   android:theme="@style/AppTheme"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.WaveSwipeStyleActivity"
+        <activity android:name="com.qujing.leeyong.klchwsc.WaveSwipeStyleActivity"
                   android:theme="@style/AppTheme"
                   android:screenOrientation="portrait"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.MobikeActivity"
+        <activity android:name="com.qujing.leeyong.klchwsc.MobikeActivity"
                   android:label="@string/lable_mobike"
                   android:theme="@style/AppTheme"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.WebViewActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.UserInfoActivity"
+        <activity android:name="com.qujing.leeyong.klchwsc.WebViewActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.UserInfoActivity"
                   android:label="@string/user_info"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.Splash_Activity"
+        <activity android:name="com.qujing.leeyong.klchwsc.Splash_Activity"
                   android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.qujing.leeyong.klctsz.MapActivity"
+        <activity android:name="com.qujing.leeyong.klchwsc.MapActivity"
                   android:label="@string/lable_map"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.ZoushiActivty"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.ShuoMingActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.FanKuiActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.MyWebActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.WeatherActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.SsqActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.NewsEveryDay"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.HistoryActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.TestActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.OtherActivity"></activity>
-        <activity android:name="com.qujing.leeyong.klctsz.XuanHaoActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.ZoushiActivty"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.ShuoMingActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.FanKuiActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.MyWebActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.WeatherActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.SsqActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.NewsEveryDay"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.HistoryActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.TestActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.OtherActivity"></activity>
+        <activity android:name="com.qujing.leeyong.klchwsc.XuanHaoActivity"></activity>
 
 
         <!-- Rich push 核心功能 since 2.0.6-->
@@ -163,7 +163,7 @@
 
         <!-- since 3.1.0 Required SDK 核心功能-->
         <provider
-            android:authorities="com.qujing.leeyong.klctsz.DownloadProvider"
+            android:authorities="com.qujing.leeyong.klchwsc.DownloadProvider"
             android:name="cn.jpush.android.service.DownloadProvider"
             android:exported="true"
             />
@@ -194,21 +194,21 @@
 
         <!-- since 3.0.9 Required SDK 核心功能-->
         <provider
-            android:authorities="com.qujing.leeyong.klctsz.DataProvider"
+            android:authorities="com.qujing.leeyong.klchwsc.DataProvider"
             android:name="cn.jpush.android.service.DataProvider"
             android:exported="false"
             />
 
 
         <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调-->
-        <receiver android:name="com.qujing.leeyong.klctsz.util.MyJPushMessageReceiver">
+        <receiver android:name="com.qujing.leeyong.klchwsc.util.MyJPushMessageReceiver">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
                 <category android:name="com.qujing.leeyong"></category>
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.qujing.leeyong.klctsz.util.MyReceiver"
+            android:name="com.qujing.leeyong.klchwsc.util.MyReceiver"
             android:exported="false"
             android:enabled="true">
             <intent-filter>
