@@ -38,11 +38,14 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="35dp"
+            android:src="@drawable/daohang"
+            android:layout_height="15dp"/>
         <TextView
             android:layout_width="wrap_content"
-            android:text="线下走势"
+            android:text="工具宝箱"
             android:gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"/>
         <ImageView
             android:layout_width="0dp"
@@ -55,7 +58,6 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:padding="5dp"
-    android:layout_marginTop="10dp"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -93,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="开奖走势"/>
+            android:text="开奖走势图"/>
 
     </LinearLayout>
     <LinearLayout
@@ -113,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="开心选号"/>
+            android:text="模拟选号"/>
 
     </LinearLayout>
 </LinearLayout>
@@ -148,11 +150,14 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="35dp"
+            android:src="@drawable/daohang"
+            android:layout_height="15dp"/>
         <TextView
             android:layout_width="wrap_content"
-            android:text="今日新开"
+            android:text="选择彩种"
             android:gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"/>
         <ImageView
             android:layout_width="0dp"

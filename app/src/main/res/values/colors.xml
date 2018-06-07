@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FBC23F</color>
-    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorPrimary">#12CD7F</color>
+    <color name="colorPrimaryDark">#84F4C5</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color><!--白色 -->
     <color name="sunny">#E5644C</color>
@@ -150,13 +150,11 @@
     <color name="deepskyblue">#00bfff</color><!--深天蓝色 -->
     <color name="darkcyan">#008b8b</color><!--暗青色 -->
     <color name="teal">#008080</color><!--水鸭色 -->
-    <color name="green">#008000</color><!--绿色 -->
     <color name="darkgreen">#006400</color><!--暗绿色 -->
     <color name="blue">#0000ff</color><!--蓝色 -->
     <color name="mediumblue">#0000cd</color><!--中兰色 -->
     <color name="darkblue">#00008b</color><!--暗蓝色 -->
     <color name="navy">#000080</color><!--海军色 -->
-    <color name="black">#000000</color><!--黑色 -->
     <color name="light_gray">#ffcccccc</color>
     <color name="text_color">#969BA3</color>
     <!--夜间模式相关颜色-->
@@ -434,4 +432,43 @@
     <color name="saleroommate_itembg_10">#1ea093</color>
     <color name="saleroommate_itembg_11">#dfcaac</color>
     <color name="saleroommate_itembg_12">#f14450</color>
+
+
+    <color name="green">#ff00ff00</color>
+    <color name="black">#ff000000</color>
+    <color name="default_progress_bar_color">#ff33b5e5</color>
+    <color name="base_bg_color">#ffffffff</color>
+    <color name="base_edittext_hint_color">#ffa4a6b0</color>
+    <color name="base_black">#ff000000</color>
+    <color name="base_white">#ffffffff</color>
+    <color name="base_red">#ffff0000</color>
+    <color name="biz_tie_reply">#ff545454</color>
+    <color name="color_copy_right">#ffababab</color>
+    <color name="color_nav_text">#ff414141</color>
+    <color name="color_dialog_ok">#fffb5365</color>
+    <color name="spb_default_color">#ff33b5e5</color>
+    <color name="magazine_title_font">#ff212020</color>
+    <color name="process_bakground">#80000000</color>
+    <color name="book_bar_color">#80000000</color>
+    <color name="syn_book_bg">#ff6678</color>
+    <color name="exam_and_account_bg">#ffcc33</color>
+    <color name="famous_book_bg">#9755f6</color>
+    <color name="best_head_bg">#fe864b</color>
+    <color name="user_manager_bg">#0fc4d9</color>
+    <color name="my_download_bg">#84d018</color>
+    <color name="sys_setting_bg">#c8d900</color>
+    <color name="about_us_bg">#22ad38</color>
+    <color name="base_bar_bottom_color">#0fc4d9</color>
+    <color name="base_text_color">#a5a5a5</color>
+    <color name="font_tab_unselected_color">#dddddd</color>
+    <color name="font_tab_selected_color">#a5a5a5</color>
+    <color name="button_bg_color">#0fc4d9</color>
+    <color name="button_bg_color_selector">#747ae9</color>
+    <color name="yellow_bg">#ffcc33</color>
+    <color name="orange_bg">#fe864b</color>
+    <color name="paink_bg">#ff6678</color>
+    <color name="green_bg">#0fc4d9</color>
+    <color name="blue_bg">#747ae9</color>
+    <color name="dark_blue_bg">#9755f6</color>
+
 </resources>

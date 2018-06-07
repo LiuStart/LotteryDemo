@@ -9,33 +9,84 @@
         android:background="?attr/colorPrimary"
         android:id="@+id/head"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:minHeight="?attr/actionBarSize">
+        android:layout_height="50dp"
+        >
         <TextView
             android:textColor="@color/white"
             android:text="最新开奖"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:gravity="center"
             android:id="@+id/title"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
-        <ImageView
-            android:id="@+id/show"
-            android:src="@drawable/btn_add"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:id="@+id/kefu"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:layout_height="match_parent"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@drawable/aaa1"
+                android:id="@+id/show"
+                android:visibility="gone"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+            <ImageView
+                android:src="@drawable/qq"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="客服"
+                android:layout_marginLeft="2dp"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/head"
+        android:background="@color/yellow"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/gongao"
+            android:layout_width="30dp"
+            android:src="@drawable/gongao"
+            android:layout_height="30dp"/>
+        <TextView
+            android:text="请联系我们计划专员。QQ：987662662，提高您的中奖几率"
+            android:singleLine="true"
+            android:textColor="@color/red"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:textSize="20sp"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
+        android:layout_above="@+id/line"
+        android:layout_below="@+id/head"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+         />
     <ImageView
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:background="#DEDEDE"
         android:layout_height="1dp"/>

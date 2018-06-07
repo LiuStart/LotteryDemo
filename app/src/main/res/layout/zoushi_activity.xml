@@ -9,15 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:minHeight="?attr/actionBarSize">
+
         <TextView
-            android:textColor="@color/white"
-            android:text="最新势图"
-            android:textSize="22sp"
-            android:gravity="center"
             android:id="@+id/title"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="最新走势图"
+            android:textColor="@color/white"
+            android:textSize="22sp"/>
 
     </RelativeLayout>
     <ScrollView

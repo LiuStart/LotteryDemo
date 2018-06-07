@@ -8,6 +8,7 @@
 
     <com.dalong.carrousellayout.CarrouselLayout
         android:id="@+id/carrousel"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -93,6 +94,7 @@
             android:layout_height="1dp"/>
     </LinearLayout>
     <GridView
+        android:visibility="gone"
         android:id="@+id/gridview"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -104,6 +106,7 @@
 
     </GridView>
     <LinearLayout
+        android:visibility="gone"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -128,6 +131,7 @@
             android:layout_height="1dp"/>
     </LinearLayout>
     <GridView
+        android:visibility="gone"
         android:id="@+id/gridview_h"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -138,4 +142,8 @@
         android:verticalSpacing="10dp">
 
     </GridView>
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
 </LinearLayout>

@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">开乐彩</string>
-    <string name="share_name">喜乐彩</string>
+    <string name="app_name">北京赛车pk10</string>
     <string name="title_home">开奖</string>
     <string name="title_news">最新资讯</string>
     <string name="title_sport">体育赛事</string>
@@ -19,7 +18,14 @@
         <string name="context_menu">Context menu</string>
         <string name="region_hint">unselected</string>
         <string name="region_name">selected area</string>
-
+    <string name="syn_tech">同步教材</string>
+    <string name="exam_room">模拟考场</string>
+    <string name="famous_book">文学名著</string>
+    <string name="best_head">最強大腦</string>
+    <string name="user_manager">用戶管理</string>
+    <string name="add_account">账戶充值</string>
+    <string name="my_download">下载管理</string>
+    <string name="sys_setting">系統設置</string>
         <string name="fragment_refresh_styles">Styles</string>
         <string name="fragment_refresh_example">Examples</string>
         <string name="fragment_refresh_practice">Practice</string>

@@ -8,8 +8,12 @@
     <dimen name="title_text_size">26sp</dimen>
     <dimen name="tool_bar_height">56dp</dimen>
 
+    <dimen name="main_content_padding">25dp</dimen>
+    <dimen name="main_title_text_padding">5dp</dimen>
+    <dimen name="main_title_text_size">16sp</dimen>
 
-
+    <dimen name="tab_menu_txtsize">15sp</dimen>
+    <dimen name="tab_menu_bg_height">110dp</dimen>
         <dimen name="picker_default_text_size">12sp</dimen>
         <dimen name="picker_toolbar_height">40dp</dimen>
         <dimen name="picker_dialog_height">190dp</dimen>
@@ -17,8 +21,8 @@
         <dimen name="picker_line_width">1dp</dimen>
         <dimen name="picker_line_mar">15dp</dimen>
         <dimen name="picker_height">230dp</dimen>
-
-
+    <dimen name="main_layout_margin">8dp</dimen>
+    <dimen name="main_button_margin">4dp</dimen>
         <dimen name="pagemargin">16dp</dimen>
         <dimen name="historyscore_tb">10dp</dimen>
         <!-- 首界面布局用到的布局尺寸 start -->
